@@ -2,4 +2,4 @@
 
 Built with ReactJS.
 
-![Visit my website](https://gowtham.co.uk)
+[Visit my website](https://gowtham.co.uk)
