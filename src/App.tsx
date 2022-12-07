@@ -1,23 +1,23 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Link, Route, Routes } from "react-router-dom";
+import { Home } from "./pages/Home";
+import { Portfolio } from "./pages/Portfolio";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Gowthaman Ravindrathas
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Welcome to my page
-        </a>
-      </header>
-    </div>
+    <>
+    <nav>
+      <ul>
+        <li><Link to={"Home"}>Home</Link></li>
+        <li><Link to={"Portfolio"}>Portfolio</Link></li>
+      </ul>
+    </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+      </Routes>
+    </>
   );
 }
 

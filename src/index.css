@@ -45,12 +45,12 @@
 }
 
 * {
-box-sizing: border-box;
-transition: all ease-in-out 100ms;
+  box-sizing: border-box;
+  transition: all ease-in-out 100ms;
 }
 
 html {
-height: -webkit-fill-available;
+  height: -webkit-fill-available;
 }
 
 body,
