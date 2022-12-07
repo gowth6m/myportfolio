@@ -114,3 +114,9 @@ ul {
   height: 94%;
   overflow: hidden;
 }
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

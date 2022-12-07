@@ -1,6 +1,6 @@
 export function Portfolio() {
     return (
-      <div>
+      <div className="home-page flex">
         <h1>Portfolio</h1>
       </div>
     );

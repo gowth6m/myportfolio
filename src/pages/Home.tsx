@@ -1,7 +1,9 @@
+import "./Home.css";
+
 export function Home() {
   return (
-    <div>
-      <h1>Home</h1>
+    <div className="home-page flex">
+      <div className="home-title">Welcome to my portfolio</div>
     </div>
   );
 }

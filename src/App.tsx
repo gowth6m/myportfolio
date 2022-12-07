@@ -1,18 +1,20 @@
 import React from "react";
 import "./App.css";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, NavLink, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Portfolio } from "./pages/Portfolio";
 
 function App() {
   return (
     <>
-    <nav>
-      <ul>
-        <li><Link to={"Home"}>Home</Link></li>
-        <li><Link to={"Portfolio"}>Portfolio</Link></li>
+    <NavLink className="navigation flex" to={"/"}>
+      <ul className="">
+        <li><Link to={"/"}>Home</Link></li>
+        <li><Link to={"/"}>About</Link></li>
+        <li><Link to={"/portfolio"}>Portfolio</Link></li>
+        <li><Link to={"/"}>Contact</Link></li>
       </ul>
-    </nav>
+    </NavLink>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
