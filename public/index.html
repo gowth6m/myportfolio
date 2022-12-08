@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
-    name="description"
-    content="Portfolio of Gowthaman Ravindrathas - designer and developer"
+      name="description"
+      content="Portfolio of Gowthaman Ravindrathas - designer and developer"
     />
     <meta
-    name="keywords"
-    content="webdesign, web development, UX, UI, apps, graphic design, software engineering, gowtham, ravindrathas, gowthaman, nocxa, software, engineer"
+      name="keywords"
+      content="webdesign, web development, UX, UI, apps, graphic design, software engineering, gowtham, ravindrathas, gowthaman, nocxa, software, engineer"
     />
     <meta property="og:image" content="%PUBLIC_URL%/gr_icon.svg" />
     <meta name="author" content="Gowthaman Ravindrathas" />
@@ -19,9 +19,74 @@
     <link rel="icon" href="%PUBLIC_URL%/gr_icon.svg" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/gr_icon.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
+  <script>
+    var app = (function () {
+      var body = undefined;
+      var menu = undefined;
+      var menuItems = undefined;
+      var init = function init() {
+        body = document.querySelector("body");
+        menu = document.querySelector(".menu-icon");
+        menuItems = document.querySelectorAll(".nav__list-item");
+        applyListeners();
+      };
+
+      var applyListeners = function applyListeners() {
+        menu.addEventListener("click", function () {
+          return toggleClass(body, "nav-active");
+        });
+      };
+
+      var toggleClass = function toggleClass(element, stringClass) {
+        if (element.classList.contains(stringClass))
+          element.classList.remove(stringClass);
+        else element.classList.add(stringClass);
+      };
+
+      init();
+    })();
+
+    //Nav clicks
+    var menuItems = document.querySelectorAll(".nav__list-item");
+    var stringClass = "nav-active";
+    var element = document.querySelector(".nav__list-item");
+
+    $(menuItems).on("click", function () {
+      if ($("body").hasClass("nav-active")) {
+        $("body").removeClass("nav-active");
+      }
+      if (element.classList.contains(stringClass))
+        element.classList.remove(stringClass);
+      else element.classList.add(stringClass);
+    });
+
+    //Switch light/dark
+    $("#switch").on("click", function () {
+      if ($("body").hasClass("light")) {
+        $("body").removeClass("light");
+        $("#switch").removeClass("switched");
+      } else {
+        $("body").addClass("light");
+        $("#switch").addClass("switched");
+      }
+    });
+  </script>
 </html>

@@ -1,9 +1,10 @@
 import React from "react";
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import { Home } from "./pages/Home";
-import { Portfolio } from "./pages/Portfolio";
+
 import NavBar from "./components/NavBar";
+import { Home } from "./components/Home";
+import { Portfolio } from "./components/Portfolio";
 
 function App() {
   return (
