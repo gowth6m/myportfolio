@@ -44,6 +44,8 @@
 
 .about-timeline-item-container {
     text-align: left;
+    border-radius: 10px;
+    padding: 1em;
     background-color: coral;
     width: calc(100% - var(--timelineCircleWidth) - var(--gapBetween));
     margin: 0 calc(var(--timelineCircleWidth) + var(--gapBetween));

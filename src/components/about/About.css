@@ -31,7 +31,7 @@
 
 .about-section-two {
     flex-direction: column;
-    background-color: rgb(53, 53, 53);
+    /* background-color: rgb(53, 53, 53); */
     width: 100%;
 }
 
