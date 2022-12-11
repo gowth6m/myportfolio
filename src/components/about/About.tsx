@@ -1,4 +1,5 @@
 import "./About.css";
+import { Timeline } from "./Timeline";
 
 export function About() {
   return (
@@ -23,19 +24,7 @@ export function About() {
 
         {/* Section two - timeline */}
         <div className="about-section-two flex">
-          <div className="about-timeline">
-            <div className="about-timeline-item">
-              <div className="about-timeline-item-content">
-                App Develoepr
-                <br></br>
-                University of Exeter
-              </div>
-            </div>
-            
-            <div className="about-timeline-item">
-              
-            </div>
-          </div>
+          <Timeline />
         </div>
       </div>
     </div>
