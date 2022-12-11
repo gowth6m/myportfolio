@@ -89,6 +89,28 @@ ul {
     list-style: none;
 }
 
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #383838 #0e0e0e;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #0e0e0e;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #353535;
+    border-radius: 10px;
+    border: 3px none #ffffff;
+  }
+
 .screen-max {
     /* max-width: 1024px; */
     max-width: 1440px;

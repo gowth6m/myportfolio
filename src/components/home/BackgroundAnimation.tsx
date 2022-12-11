@@ -126,12 +126,16 @@ export function BackgroundAnimation() {
   }, [state.canvasHeight, state.canvasWidth]);
 
   return (
-    <canvas
-      id="homeCanvas"
-      className="home-canvas"
-      ref={canvasRef}
-      width={state.canvasWidth}
-      height={state.canvasHeight}
-    ></canvas>
+    <>
+      <div className="home-canvas-container">
+        <canvas
+          id="homeCanvas"
+          className="home-canvas"
+          ref={canvasRef}
+          width={state.canvasWidth}
+          height={state.canvasHeight}
+        ></canvas>
+      </div>
+    </>
   );
 }

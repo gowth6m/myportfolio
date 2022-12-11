@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { About } from "../about/About";
+import { SideText } from "../misc/SideText";
 import { BackgroundAnimation } from "./BackgroundAnimation";
 import "./Home.css";
 
@@ -69,9 +70,11 @@ export function Home() {
     }
   };
 
+
   return (
     <>
        <div className="home-page flex" id="home">
+       <SideText left='- HELLO THERE -' right='- HELLO THERE -'/>
         <BackgroundAnimation />
         <div className="screen-max flex">
           <div className="home-page-container">
