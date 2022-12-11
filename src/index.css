@@ -1,5 +1,4 @@
-
-:root {
+@import url('https://fonts.googleapis.com/css2?family=Press+Start + 2P &display=swap');:root {
     --white: #f8f8f8;
     --greyWhite: #cccccc;
     --starColorTwo: rgba(0, 0, 0, 0.25);
@@ -45,78 +44,84 @@
 }
 
 * {
-  box-sizing: border-box;
-  transition: all ease-in-out 100ms;
+box-sizing: border-box;
+transition: all ease-in-out 100ms;
 }
 
 html {
-  height: -webkit-fill-available;
+height: -webkit-fill-available;
 }
 
 body,
 html {
-  text-align: center;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin: 0;
-  padding: 0;
-  max-width: 100vw;
-  scroll-behavior: smooth;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-  overflow-x: hidden;
-  background-color: var(--body);
-  color: var(--white);
-  font-family: var(--body-font);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+    scroll-behavior: smooth;
+    min-height: 100dvh;
+    min-height: -webkit-fill-available;
+    overflow-x: hidden;
+    background-color: var(--body);
+    color: var(--white);
+    font-family: var(--body-font);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
+max-width: 100%;
+height: auto;
 }
 
 a {
-  text-decoration: none;
-  color: var(--white);
+text-decoration: none;
+color: var(--white);
 }
 
 ul {
-  list-style: none;
+list-style: none;
+}
+
+.screen-max {
+/* max-width: 1024px; */
+max-width: 1440px;
+/* max-width: 1920px; */
 }
 
 .container-main {
-  height: 100vh;
-  margin: auto;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100vw;
+height: 100dvh;
+margin: auto;
+padding: 0;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+width: 100vw;
 }
 
 .container {
-  overflow: hidden;
+overflow: hidden;
 }
 
 .container-inner {
-  margin: auto;
-  position: relative;
-  background-color: var(--white);
-  width: 97%;
-  top: 3%;
-  height: 94%;
-  overflow: hidden;
+margin: auto;
+position: relative;
+background-color: var(--white);
+width: 97%;
+top: 3%;
+height: 94%;
+overflow: hidden;
 }
 
 .flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+display: flex;
+justify-content: center;
+align-items: center;
 }

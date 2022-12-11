@@ -8,17 +8,18 @@ export function Home() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(typingDelay);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [index, setIndex] = useState(1);
   const period = 2000;
 
   const toRotate = [
-    "likes to try new food",
-    "likes problem solving",
-    "is an App Developer at the University of Exeter",
-    "loves the gym!",
-    "is looking for new opportunities",
-    "wants to get into Machine Learning",
-    "loves to draw",
+    "who likes to try new food",
+    "who likes problem solving",
+    "who is an app developer at the university of exeter",
+    "who loves the gym!",
+    "who is looking for new opportunities",
+    "who wants to get into machine learning",
+    "who loves to draw",
   ];
 
   useEffect(() => {
@@ -29,6 +30,7 @@ export function Home() {
     return () => {
       clearInterval(ticker);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text]);
 
   const tick = () => {
@@ -60,17 +62,19 @@ export function Home() {
 
   return (
     <div className="home-page flex">
-      <div className="home-page-container">
-        <div className="intro-info">
-          <div className="title plax">
-            I'm <span>Gowtham</span>
+      <div className="screen-max flex">
+        <div className="home-page-container">
+          <div className="title">
+            I'M <span className="title-gowtham">Gowtham</span>
             <span className="title-span">.</span>
+            <div className="title-text">
+              a designer & developer <span className="typed-text"> </span>
+              <span className="typingText">{text}</span>
+              <span className="typed-text-cursor">|</span>
+            </div>
           </div>
-          <div className="title-text plax">
-            A programmer who <span className="typed-text"> </span>
-            <span className="typingText">{text}</span>
-            <span className="typed-text-cursor">|</span>
-          </div>
+
+          <i className="scroll-down fa-3x fa-solid fa-angle-down"></i>
         </div>
       </div>
     </div>
