@@ -3,17 +3,17 @@
   "name": "Portfolio of Gowthaman Ravindrathas",
   "icons": [
     {
-      "src": "gr_icon.svg",
+      "src": "logo.svg",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "gr_icon.png",
+      "src": "logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "gr_icon.png",
+      "src": "logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }

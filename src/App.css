@@ -1,0 +1,14 @@
+.section-title {
+    font-weight: 900;
+    -webkit-text-stroke-width: 1.2px;
+    -webkit-text-stroke-color: var(--white);
+    color: var(--body);
+    text-transform: uppercase;
+    letter-spacing: -5px;
+    font-size: max(3.5em, 5vw);
+}
+
+.sec-ele-pad-v {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
