@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { About } from "./About";
 import "./Home.css";
 
 export function Home() {
@@ -61,6 +62,7 @@ export function Home() {
   };
 
   return (
+    <>
     <div className="home-page flex">
       <div className="screen-max flex">
         <div className="home-page-container">
@@ -78,5 +80,8 @@ export function Home() {
         </div>
       </div>
     </div>
+
+    <About />
+    </>
   );
 }
