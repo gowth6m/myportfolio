@@ -4,7 +4,7 @@ export function About() {
  
 
   return (
-    <div className="about-page flex">
+    <div id="aboutme" className="about-page flex">
       
     </div>
   );

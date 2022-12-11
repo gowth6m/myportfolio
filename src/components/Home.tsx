@@ -61,27 +61,37 @@ export function Home() {
     }
   };
 
+  const handleClickScroll = () => {
+    const element = document.getElementById("aboutme");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
-    <div className="home-page flex">
-      <div className="screen-max flex">
-        <div className="home-page-container">
-          <div className="title">
-            I'M <span className="title-gowtham">Gowtham</span>
-            <span className="title-span">.</span>
-            <div className="title-text">
-              a designer & developer <span className="typed-text"> </span>
-              <span className="typingText">{text}</span>
-              <span className="typed-text-cursor">|</span>
+      <div className="home-page flex" id="home">
+        <div className="screen-max flex">
+          <div className="home-page-container">
+            <div className="title">
+              I'M <span className="title-gowtham">Gowtham</span>
+              <span className="title-span">.</span>
+              <div className="title-text">
+                a designer & developer <span className="typed-text"> </span>
+                <span className="typingText">{text}</span>
+                <span className="typed-text-cursor">|</span>
+              </div>
             </div>
-          </div>
 
-          <i className="scroll-down fa-3x fa-solid fa-angle-down"></i>
+            <i
+              onClick={handleClickScroll}
+              className="scroll-down fa-3x fa-solid fa-angle-down"
+            ></i>
+          </div>
         </div>
       </div>
-    </div>
 
-    <About />
+      <About />
     </>
   );
 }
