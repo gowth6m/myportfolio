@@ -45,7 +45,7 @@ export function BackgroundAnimation() {
         return out;
       };
 
-      let stars = state.canvasWidth < 940 ? makeStars(1000) : makeStars(4000);
+      let stars = state.canvasWidth < 960 ? makeStars(1000) : makeStars(4000);
 
       const clear = () => {
         c!.fillRect(0, 0, state.canvasWidth, state.canvasHeight);
