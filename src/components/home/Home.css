@@ -1,5 +1,5 @@
 .home-page {
-    height: 100dvh;
+    height: 100svh;
     width: 100%;
 }
 
@@ -74,7 +74,8 @@
 
 .scroll-down:focus,
 .scroll-down:hover {
-    font-size: 4em;
+    /* font-size: 4em; */
+    text-shadow: 0px 0px 30px white,0px 0px 30px white,0px 0px 30px white,0px 0px 10px #553300,0px 0px 10px #553300;
 }
 
 @keyframes scroll-down-arrow {

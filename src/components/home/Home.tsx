@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { About } from "../about/About";
+import { BackgroundAnimation } from "./BackgroundAnimation";
 import "./Home.css";
 
 export function Home() {
@@ -70,7 +71,8 @@ export function Home() {
 
   return (
     <>
-      <div className="home-page flex" id="home">
+       <div className="home-page flex" id="home">
+        <BackgroundAnimation />
         <div className="screen-max flex">
           <div className="home-page-container">
             <div className="title">

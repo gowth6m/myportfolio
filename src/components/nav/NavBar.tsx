@@ -71,7 +71,10 @@ function NavBar() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/" className="nav-links" onClick={handleClick}>
+              <NavLink to="/" className="nav-links" onClick={() => {
+                  handleClick();
+                  handleClickScroll('aboutme');
+                }}>
                 About
               </NavLink>
             </li>

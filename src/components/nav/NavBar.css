@@ -85,8 +85,8 @@
         width: 100%;
         height: 100dvh;
         position: absolute;
-        top: 0;
-        left: -105vw;
+        top: -100lvh;
+        left: 0;
         opacity: 1;
         transition: all 0.5s ease;
         margin: 0;
@@ -97,6 +97,7 @@
 
     .nav-menu.active {
         left: 0;
+        top: 0;
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 1;
