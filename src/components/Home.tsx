@@ -61,8 +61,8 @@ export function Home() {
     }
   };
 
-  const handleClickScroll = () => {
-    const element = document.getElementById("aboutme");
+  const handleClickScroll = (id:string) => {
+    const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -84,7 +84,7 @@ export function Home() {
             </div>
 
             <i
-              onClick={handleClickScroll}
+              onClick={()=>handleClickScroll('aboutme')}
               className="scroll-down fa-3x fa-solid fa-angle-down"
             ></i>
           </div>

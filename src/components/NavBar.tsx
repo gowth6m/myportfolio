@@ -5,6 +5,13 @@ import "./NavBar.css";
 function NavBar() {
   const [click, setClick] = useState(false);
 
+  const handleClickScroll = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const toggleClass = function toggleClass(
     element: Element,
     stringClass: string
@@ -30,15 +37,19 @@ function NavBar() {
     setClick(!click);
   };
 
-  const openSocial = (socialLink:string) => {
+  const openSocial = (socialLink: string) => {
     window.open(socialLink);
-  }
+  };
 
   return (
     <>
       <nav className="navbar screen-max">
         <div className="nav-container">
-          <NavLink to="/" className="nav-logo">
+          <NavLink
+            to="/"
+            className="nav-logo"
+            onClick={() => handleClickScroll("home")}
+          >
             <img
               src={process.env.PUBLIC_URL + "/gr_icon_plain.svg"}
               alt="logo"
@@ -48,7 +59,14 @@ function NavBar() {
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
-              <NavLink to="/" className="nav-links" onClick={handleClick}>
+              <NavLink
+                to="/"
+                className="nav-links"
+                onClick={() => {
+                  handleClick();
+                  handleClickScroll('home');
+                }}
+              >
                 Home
               </NavLink>
             </li>
@@ -72,11 +90,32 @@ function NavBar() {
               </NavLink>
             </li>
             <div className="nav-socials">
-              <div onClick={()=>openSocial('https://github.com/gowth6m')} className="nav-socials-item"><i className="fa-brands fa-2xl fa-github"></i></div>
-              <div onClick={()=>openSocial('https://www.linkedin.com/in/gowth6m/')} className="nav-socials-item"><i className="fa-brands fa-2xl fa-linkedin"></i></div>
-              <div onClick={()=>openSocial('https://www.google.com')} className="nav-socials-item"><i className="fa-brands fa-2xl fa-youtube"></i></div>
-              <div onClick={()=>openSocial('https://twitter.com/gowth6m')} className="nav-socials-item"><i className="fa-brands fa-2xl fa-twitter"></i></div>
-
+              <div
+                onClick={() => openSocial("https://github.com/gowth6m")}
+                className="nav-socials-item"
+              >
+                <i className="fa-brands fa-2xl fa-github"></i>
+              </div>
+              <div
+                onClick={() =>
+                  openSocial("https://www.linkedin.com/in/gowth6m/")
+                }
+                className="nav-socials-item"
+              >
+                <i className="fa-brands fa-2xl fa-linkedin"></i>
+              </div>
+              <div
+                onClick={() => openSocial("https://www.google.com")}
+                className="nav-socials-item"
+              >
+                <i className="fa-brands fa-2xl fa-youtube"></i>
+              </div>
+              <div
+                onClick={() => openSocial("https://twitter.com/gowth6m")}
+                className="nav-socials-item"
+              >
+                <i className="fa-brands fa-2xl fa-twitter"></i>
+              </div>
             </div>
           </ul>
           <div className="nav-icon" onClick={handleClick}>
