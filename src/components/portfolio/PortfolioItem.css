@@ -1,0 +1,9 @@
+.portfolio-item-container {
+    background-color: coral;
+    height: auto;
+    display: flex;
+    margin: 10px;
+    padding: 1em;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
