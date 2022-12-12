@@ -6,6 +6,7 @@ export function About() {
     <div id="aboutme" className="about-page flex">
       <div className="screen-max flex">
         <div className="about-page-container">
+          
           {/* Section one - short description */}
           <div className="about-section-one flex">
             <div className="about-title section-title">

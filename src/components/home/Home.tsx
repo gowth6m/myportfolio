@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { About } from "../about/About";
 import { SideText } from "../misc/SideText";
+import { Skills } from "../skills/Skills";
 import { BackgroundAnimation } from "./BackgroundAnimation";
 import "./Home.css";
 
@@ -97,6 +98,8 @@ export function Home() {
       </div>
 
       <About />
+        
+      <Skills />
     </>
   );
 }

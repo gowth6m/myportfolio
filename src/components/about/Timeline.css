@@ -43,7 +43,7 @@
 }
 
 .about-timeline-item-container {
-    text-align: left;
+    /* text-align: left; */
     border-radius: 10px;
     padding: 1em;
     color: black;
@@ -52,12 +52,23 @@
     margin: 0 calc(var(--timelineCircleWidth) + var(--gapBetween));
 }
 
+/* .about-timeline-item-context {
+
+} */
+
 .about-timeline-item-title {
     font-weight: 700;
 }
 
 .about-timeline-item-logo {
+    padding: 10px 0px;
     filter: grayscale();
+    width: 60%;
+    mix-blend-mode: multiply;
+}
+
+#swmstudios {
+    width: 80%;
 }
 
 

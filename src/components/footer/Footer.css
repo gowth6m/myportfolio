@@ -27,6 +27,7 @@
   .footer-list-item:focus,
   .footer-list-item:hover {
     color: var(--mainHover);
+    text-shadow: 0px 0px 30px white,0px 0px 30px white,0px 0px 30px white,0px 0px 10px #ffffff,0px 0px 10px #ffffff;
   }
   
   .footer-brand {
@@ -59,6 +60,7 @@
   .footer-socials div i:focus,
   .footer-socials div i:hover {
     cursor: pointer;
+    text-shadow: 0px 0px 30px white,0px 0px 30px white,0px 0px 30px white,0px 0px 10px #ffffff,0px 0px 10px #ffffff;
   }
 
   /* #### Desktops #### */
