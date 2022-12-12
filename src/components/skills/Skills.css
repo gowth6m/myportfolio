@@ -33,5 +33,8 @@
 }
 
 .skills-list-item {
-    padding: 0px 0.4em;
+    padding: 2px 0.4em;
+    margin: 0.2em 0.4em;
+    border-radius: 10px;
+    border: 1px solid var(--white);
 }
