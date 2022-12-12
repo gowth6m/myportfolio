@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { About } from "../about/About";
+import {Contact } from "../contact/Contact";
 import { SideText } from "../misc/SideText";
 import { Skills } from "../skills/Skills";
 import { BackgroundAnimation } from "./BackgroundAnimation";
@@ -64,18 +65,17 @@ export function Home() {
     }
   };
 
-  const handleClickScroll = (id:string) => {
+  const handleClickScroll = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
-
   return (
     <>
-       <div className="home-page flex" id="home">
-       <SideText left='- HELLO THERE -' right='- HELLO THERE -'/>
+      <div className="home-page flex" id="home">
+        <SideText left="- HELLO THERE -" right="- HELLO THERE -" />
         <BackgroundAnimation />
         <div className="screen-max flex">
           <div className="home-page-container">
@@ -90,7 +90,7 @@ export function Home() {
             </div>
 
             <i
-              onClick={()=>handleClickScroll('aboutme')}
+              onClick={() => handleClickScroll("aboutme")}
               className="scroll-down fa-3x fa-solid fa-angle-down"
             ></i>
           </div>
@@ -98,8 +98,10 @@ export function Home() {
       </div>
 
       <About />
-        
+
       <Skills />
+
+      <Contact />
     </>
   );
 }

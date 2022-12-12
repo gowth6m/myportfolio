@@ -43,22 +43,29 @@ export function Skills() {
     "Tailwind",
     "Three.js",
   ]);
-  let sectionTwo = new SkillsSection("Frontend", "Test", [
+  let sectionTwo = new SkillsSection("Backend", "Test", [
     "Node.js",
     "Django",
+    "C, C# & C++",
+    "Java",
+    "GraphQL",
+    "SQL",
     "Docker",
-    "Firebase",
   ]);
-  let sectionThree = new SkillsSection("Mobile Development", "Test", [
+  let sectionThree = new SkillsSection("Mobile", "Test", [
     "Flutter",
     "Swift",
     "Kotlin",
     "CoreML Models",
+    "Lottie",
+    "Chopper"
   ]);
   let sectionFour = new SkillsSection("Other", "Test", [
     "GitHub",
-    "Figma",
+    "Firebase",
     "AWS Services",
+    "Figma",
+    "Unity",
     "Jira",
   ]);
 
