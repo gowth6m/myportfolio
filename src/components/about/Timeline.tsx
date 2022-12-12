@@ -3,11 +3,13 @@ import "./Timeline.css";
 export function Timeline() {
   class TimelineItem {
     title: string;
-    subtitle:string;
+    subtitle: string;
+    logo:string
 
-    constructor(title: string, subtitle: string) {
+    constructor(title: string, subtitle: string, logo:string) {
       this.title = title;
       this.subtitle = subtitle;
+      this.logo = logo;
     }
 
     display() {
@@ -15,9 +17,15 @@ export function Timeline() {
         <div className="about-timeline-item">
           <div className="about-timeline-item-container">
             <div className="about-timeline-item-context">
-              {this.title}
-              <br></br>
-              {this.subtitle}
+              <div className="about-timeline-item-title">{this.title}</div>
+              <div className="about-timeline-item-subtitle">
+                {this.subtitle}
+              </div>
+              <img
+                className="about-timeline-item-logo"
+                src={process.env.PUBLIC_URL + "/assets/" + this.logo}
+                alt="work-logo"
+              />
             </div>
           </div>
         </div>
@@ -25,9 +33,9 @@ export function Timeline() {
     }
   }
 
-  let one = new TimelineItem('App Developer', 'University of Exeter');
-  let two = new TimelineItem('Frontend Developer', 'Nocxa');
-  let three = new TimelineItem('Software Developer', 'Swimstudios');
+  let one = new TimelineItem("App Developer", "University of Exeter", "uoe_logo.svg");
+  let two = new TimelineItem("Frontend Developer", "Nocxa", "nocxa_logo_b.svg");
+  let three = new TimelineItem("Software Developer", "Swimstudios", "uoe_logo.svg");
 
   return (
     <div className="about-timeline">

@@ -51,7 +51,7 @@ function NavBar() {
             onClick={() => handleClickScroll("home")}
           >
             <img
-              src={process.env.PUBLIC_URL + "/logo_transparent.svg"}
+              src={process.env.PUBLIC_URL + "/assets/logo_transparent.svg"}
               alt="logo"
               className="navbar-logo"
             ></img>

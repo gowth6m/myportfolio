@@ -31,16 +31,21 @@
     --big-font-size: 2rem;
     --h2-font-size: 1.25rem;
     --normal-font-size: 0.938rem;
+
+    --padding-sm: 10px;
+    --padding-md: 20px;
+    --padding-lg: 30px;
+    --padding-xlg: 40px;
 }
 
 @media screen and(min-width: 768px){:root {
-    --big2-title-font-size: 8rem;
-    --big-title-font-size: 6.5rem;
-    --title-font-size: 5.5rem;
-    --big-font-size: 3.5rem;
-    --h2-font-size: 2rem;
-    --normal-font-size: 1rem;
-}
+        --big2-title-font-size: 8rem;
+        --big-title-font-size: 6.5rem;
+        --title-font-size: 5.5rem;
+        --big-font-size: 3.5rem;
+        --h2-font-size: 2rem;
+        --normal-font-size: 1rem;
+    }
 }
 
 * {
@@ -89,32 +94,11 @@ ul {
     list-style: none;
 }
 
-/* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: auto;
-    scrollbar-color: #383838 #0e0e0e;
-  }
-
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  *::-webkit-scrollbar-track {
-    background: #0e0e0e;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background-color: #353535;
-    border-radius: 10px;
-    border: 3px none #ffffff;
-  }
-
 .screen-max {
-    /* max-width: 1024px; */
-    max-width: 1440px;
     /* max-width: 1920px; */
+    max-width: 1440px;
+    /* max-width: 1024px; */
+    margin: 0 auto;
 }
 
 .container-main {
