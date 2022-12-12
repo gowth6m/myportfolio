@@ -47,9 +47,7 @@ export function Timeline() {
               />
               <div className="row about-timeline-item-bottom">
                 <div className="about-timeline-item-dates">{this.date}</div>
-                <div className="about-timeline-item-btn">
-                  Details
-                </div>
+                <div className="about-timeline-item-btn">Details</div>
               </div>
             </div>
           </div>
@@ -82,11 +80,13 @@ export function Timeline() {
   );
 
   return (
-    <div className="about-timeline">
-      {/* Items */}
-      {one.display()}
-      {two.display()}
-      {three.display()}
+    <div className="about-timeline-container">
+      <div className="about-timeline">
+        {/* Items */}
+        {one.display()}
+        {two.display()}
+        {three.display()}
+      </div>
     </div>
   );
 }

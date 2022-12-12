@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { About } from "../about/About";
 import {Contact } from "../contact/Contact";
+import { Separator } from "../misc/Separator";
 import { SideText } from "../misc/SideText";
 import { Skills } from "../skills/Skills";
 import { BackgroundAnimation } from "./BackgroundAnimation";
@@ -97,10 +98,13 @@ export function Home() {
         </div>
       </div>
 
+      <Separator />
       <About />
 
+      <Separator />
       <Skills />
 
+      <Separator />
       <Contact />
     </>
   );

@@ -14,7 +14,7 @@
 
 .title {
     font-size: max(3em, 5vw);
-    font-family: 'Hammersmith One', sans-serif;
+    font-family: var(--title-font);
     padding: 0 5%; 
     position: absolute;
     top: 40%;
@@ -40,7 +40,7 @@
 .title-text {
     transition: 0s ease;
     font-size: var(--big-font-size);
-    font-family: 'Hammersmith One', sans-serif;
+    font-family: var(--body-font);
     font-weight: 500;
     color: var(--titleOther);
     text-align: center;

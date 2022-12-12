@@ -58,12 +58,13 @@ export function Skills() {
     "Kotlin",
     "CoreML Models",
     "Lottie",
-    "Chopper"
+    "Chopper",
   ]);
   let sectionFour = new SkillsSection("Other", "Test", [
     "GitHub",
     "Firebase",
     "AWS Services",
+    "PyTorch",
     "Figma",
     "Unity",
     "Jira",
@@ -75,11 +76,12 @@ export function Skills() {
         <div className="skills-title section-title">
           Skills<span> .</span>
         </div>
-
-        {sectionOne.display()}
-        {sectionTwo.display()}
-        {sectionThree.display()}
-        {sectionFour.display()}
+        <div className="skills-container">
+          {sectionOne.display()}
+          {sectionTwo.display()}
+          {sectionThree.display()}
+          {sectionFour.display()}
+        </div>
       </div>
     </div>
   );
