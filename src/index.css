@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa &display=swap');:root {
+:root {
     --white: #f8f8f8;
     --greyWhite: #cccccc;
     --starColorTwo: rgba(0, 0, 0, 0.25);
@@ -34,7 +34,7 @@
     --h2-font-size: 1.25rem;
     --normal-font-size: 0.938rem;
 
-    --padding-sm: 10px;
+    --padding-sm: 10px; 
     --padding-md: 20px;
     --padding-lg: 30px;
     --padding-xlg: 40px;
