@@ -62,7 +62,7 @@ export function PortfolioPreview() {
   return (
     <div className="portfolio-preview flex">
       <div className="portfolio-preview-container screen-max">
-        <div className="portfolio-title section-title">
+        <div className="section-title">
           Portfolio <span>.</span>
         </div>
 
