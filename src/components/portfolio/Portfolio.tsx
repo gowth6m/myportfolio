@@ -41,17 +41,19 @@ export function Portfolio() {
 
         {/* rest of the stuff */}
 
-        {items
-          .filter((item) => item.filters?.includes(currentFilter))
-          .map((item) => {
-            return (
-              <div key={item.key} className="portfolio-item">
-                <div key={item.title} className="portfolio-item-image">
-                  {item.display()}
+        <div className="portfolio-items-container">
+          {items
+            .filter((item) => item.filters?.includes(currentFilter))
+            .map((item) => {
+              return (
+                <div key={item.key} className="portfolio-item">
+                  <div key={item.title} className="portfolio-item-image">
+                    {item.display()}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+        </div>
       </div>
     </div>
   );
