@@ -3,7 +3,7 @@ import { Timeline } from "./Timeline";
 
 export function About() {
   return (
-    <div id="aboutme" className="about-page flex">
+    <div id="about" className="about-page flex">
       <div className="screen-max flex">
         <div className="about-page-container">
           

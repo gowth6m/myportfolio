@@ -64,32 +64,58 @@ function NavBar() {
                 className="nav-links"
                 onClick={() => {
                   handleClick();
-                  handleClickScroll('home');
+                  handleClickScroll("home");
                 }}
               >
                 Home
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/" className="nav-links" onClick={() => {
+              <NavLink
+                to="/"
+                className="nav-links"
+                onClick={() => {
                   handleClick();
-                  handleClickScroll('aboutme');
-                }}>
+                  handleClickScroll("about");
+                }}
+              >
                 About
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/"
+                className="nav-links"
+                onClick={() => {
+                  handleClick();
+                  handleClickScroll("skills");
+                }}
+              >
+                Skills
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink
                 to="/portfolio"
                 className="nav-links"
-                onClick={handleClick}
+                onClick={() => {
+                  handleClick();
+                  handleClickScroll("portfolio");
+                }}
               >
                 Portfolio
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to="/" className="nav-links" onClick={handleClick}>
-                Contact Us
+              <NavLink
+                to="/"
+                className="nav-links"
+                onClick={() => {
+                  handleClick();
+                  handleClickScroll("contact");
+                }}
+              >
+                Contact
               </NavLink>
             </li>
             <div className="nav-socials">

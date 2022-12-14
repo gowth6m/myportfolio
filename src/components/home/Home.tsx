@@ -91,7 +91,7 @@ export function Home() {
             </div>
 
             <i
-              onClick={() => handleClickScroll("aboutme")}
+              onClick={() => handleClickScroll("about")}
               className="scroll-down fa-3x fa-solid fa-angle-down"
             ></i>
           </div>
