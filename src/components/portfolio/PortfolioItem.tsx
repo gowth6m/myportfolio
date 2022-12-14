@@ -6,6 +6,7 @@ class PortfolioItem {
   description: string;
   imageUrl: string;
   link: string;
+  github: string;
   filters?: string[];
 
   constructor(
@@ -14,6 +15,7 @@ class PortfolioItem {
     description: string,
     imageUrl: string,
     link: string,
+    github: string,
     filters?: string[]
   ) {
     this.key = key;
@@ -21,6 +23,7 @@ class PortfolioItem {
     this.description = description;
     this.imageUrl = imageUrl;
     this.link = link;
+    this.github = github;
     this.filters = ["all", ...filters!]; // forcing it to have 'all' filter
   }
 
@@ -34,7 +37,7 @@ class PortfolioItem {
             process.env.PUBLIC_URL + "/assets/portfolio_assets/" + this.imageUrl
           }
         ></img>
-        <div>{this.title}</div>
+        <div className="portfolio-item-title">{this.title}</div>
         <div>{this.description}</div>
       </div>
     );

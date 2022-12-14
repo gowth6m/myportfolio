@@ -2,17 +2,43 @@ import { useState } from "react";
 import "./Portfolio.css";
 import PortfolioItem from "./PortfolioItem";
 
+const data = [
+  {
+    key: 0,
+    title: "University of Exeter App",
+    description: "App developed using Flutter",
+    imageUrl: "uoe_app.jpg",
+    link: "https://m.exeter.ac.uk",
+    github: "",
+    filters: ["web", "mobile"],
+  },
+  {
+    key: 1,
+    title: "Stugether",
+    description: "App developed using Django",
+    imageUrl: "uoe_app.jpg",
+    link: "https://m.exeter.ac.uk",
+    github: "",
+    filters: ["web"],
+  },
+];
+
 export function Portfolio() {
   let items: PortfolioItem[] = [];
   let filters: string[] = ["all", "web", "mobile", "data", "game", "other"];
   const [currentFilter, setCurrentFilter] = useState("all");
 
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < data.length; i++) {
     items.push(
-      new PortfolioItem(i, "item " + i, "description", "uoe_app.jpg", "link", [
-        "game",
-        "web",
-      ])
+      new PortfolioItem(
+        data[i].key,
+        data[i].title,
+        data[i].description,
+        data[i].imageUrl,
+        data[i].link,
+        data[i].github,
+        data[i].filters
+      )
     );
   }
 
@@ -42,7 +68,6 @@ export function Portfolio() {
             .filter((item) => item.filters?.includes(currentFilter))
             .map((item, index) => {
               return item.render();
-              // );
             })}
         </div>
       </div>

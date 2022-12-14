@@ -42,17 +42,3 @@
     background-color: black;
     color: var(--white);
 }
-
-.portfolio-item-container {
-    background-color: transparent;
-    height: auto;
-    width: 100%;
-    display: flex;
-    margin: 10px;
-    padding: 1em;
-    flex-wrap: wrap;
-    flex-direction: column;
-    border: 2px solid var(--white);
-    border-radius: var(--itemRadius);
-    position: relative;
-}
