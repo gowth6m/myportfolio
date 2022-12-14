@@ -4,18 +4,23 @@ import PortfolioItem from "./PortfolioItem";
 
 export function Portfolio() {
   let items: PortfolioItem[] = [];
-  let filters: string[] = ["All", "Web", "Mobile", "Game", "Other"];
-  const [currentFilter, setCurrentFilter] = useState("All");
+  let filters: string[] = ["all", "web", "mobile", "data", "game", "other"];
+  const [currentFilter, setCurrentFilter] = useState("all");
 
   for (let i = 0; i < 10; i++) {
     items.push(
       new PortfolioItem(i, "item " + i, "description", "imageUrl", "link", [
-        "Web",
-        "Game",
-        "All",
+        "game",
+        "web",
       ])
     );
   }
+
+  // const [isFilterActive, setIsFilterActive] = useState(false);
+
+  // const setFilterActive =(key:string) => {
+  //   setIsFilterActive(current => !current);
+  // };
 
   return (
     <div className="portfolio-page flex">
@@ -31,6 +36,7 @@ export function Portfolio() {
               className="filters-item"
               onClick={() => {
                 console.log(filter);
+                
                 setCurrentFilter(filter);
               }}
             >

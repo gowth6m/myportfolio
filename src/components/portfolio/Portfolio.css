@@ -18,13 +18,30 @@
 
 .filters-container {
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .filters-item {
-    padding: 5px;
-    margin: 0 5px;
-    background-color: brown;
+    cursor: pointer;
+    padding: 5px 12px;
+    margin: 5px 5px;
+    color: black;
+    font-weight: 600;
+    background-color: var(--white);
+    border: var(--white) 1px solid;
+    border-radius: var(--itemRadius);
 }
+
+.filters-item:hover,
+.filters-item:focus {
+    background-color: black;
+    color: var(--white);
+}
+
+.filters-item-active {
+    background-color: black;
+}
+
 
 .portfolio-items-container {
     margin: 2em 0;

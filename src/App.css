@@ -1,5 +1,6 @@
 :root {
     --backgroundRadius: 2em;
+    --itemRadius: 1em
 }
 
 .section-title {
