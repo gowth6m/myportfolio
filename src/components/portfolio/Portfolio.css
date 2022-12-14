@@ -11,3 +11,17 @@
     height: 100%;
     width: 90%;
 }
+
+.portfolio-title {
+    margin-top: 12vh;
+}
+
+.filters-container {
+    flex-direction: row;
+}
+
+.filters-item {
+    padding: 5px;
+    margin: 0 5px;
+    background-color: brown;
+}

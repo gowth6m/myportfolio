@@ -1,24 +1,27 @@
 import './PortfolioItem.css'
 
 class PortfolioItem {
+    key: number;
     title: string;
     description: string;
     imageUrl: string;
     link: string;
-    techStack?: string[];
+    filters?: string[];
   
     constructor(
+      key: number,
       title: string,
       description: string,
       imageUrl: string,
       link: string,
-      techStack?: string[]
+      filters?: string[]
     ) {
+      this.key = key;
       this.title = title;
       this.description = description;
       this.imageUrl = imageUrl;
       this.link = link;
-      this.techStack = techStack;
+      this.filters = filters;
     }
   
     display() {

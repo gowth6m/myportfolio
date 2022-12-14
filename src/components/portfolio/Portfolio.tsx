@@ -1,33 +1,58 @@
+import { useState } from "react";
 import "./Portfolio.css";
 import PortfolioItem from "./PortfolioItem";
 
 export function Portfolio() {
-  let data: PortfolioItem[] = [];
+  let items: PortfolioItem[] = [];
+  let filters: string[] = ["All", "Web", "Mobile", "Game", "Other"];
+  const [currentFilter, setCurrentFilter] = useState("All");
 
   for (let i = 0; i < 10; i++) {
-    data.push(
-      new PortfolioItem("item " + i, "description", "imageUrl", "link")
+    items.push(
+      new PortfolioItem(i, "item " + i, "description", "imageUrl", "link", [
+        "Web",
+        "Game",
+        "All",
+      ])
     );
   }
 
   return (
     <div className="portfolio-page flex">
-      <div className="portfolio-page-container">
+      <div className="portfolio-page-container screen-max">
         <div className="portfolio-title section-title">
           Portfolio <span>.</span>
         </div>
 
+        <div className="filters-container flex">
+          {filters.map((filter) => (
+            <div
+              key={filter}
+              className="filters-item"
+              onClick={() => {
+                console.log(filter);
+                setCurrentFilter(filter);
+              }}
+            >
+              {filter}
+            </div>
+          ))}
+        </div>
+
         {/* rest of the stuff */}
 
-        {data.map((item) => {
-          return (
-            <div className="portfolio-item">
-              <div className="portfolio-item-image">{item.display()}</div>
-            </div>
-          );
-        })}
+        {items
+          .filter((item) => item.filters?.includes(currentFilter))
+          .map((item) => {
+            return (
+              <div key={item.key} className="portfolio-item">
+                <div key={item.title} className="portfolio-item-image">
+                  {item.display()}
+                </div>
+              </div>
+            );
+          })}
       </div>
     </div>
   );
 }
-
