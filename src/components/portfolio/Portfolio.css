@@ -44,3 +44,20 @@
     background-color: black;
     color: var(--white);
 }
+
+.portfolio-preview-view-more {
+    cursor: pointer;
+    background-color: var(--white);
+    padding: 0.6em;
+    border-radius: var(--itemRadius);
+    color: black;
+    font-size: max(1.2em, 2vw);
+    font-weight: 600;
+    border: white 2px solid;
+}
+
+.portfolio-preview-view-more:hover,
+.portfolio-preview-view-more:focus {
+    background-color: var(--body);
+    color: var(--white);
+}

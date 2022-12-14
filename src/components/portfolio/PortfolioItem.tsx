@@ -31,6 +31,7 @@ class PortfolioItem {
     return (
       <div key={this.key} className="portfolio-item-container">
         <img
+          loading="lazy"
           className="portfolio-item-img"
           alt="portfolioItemImg"
           src={
@@ -40,9 +41,9 @@ class PortfolioItem {
         <div className="portfolio-item-details flex">
           <div className="portfolio-item-title">{this.title}</div>
         </div>
-        <div className="portfolio-item-bot">
+        {/* <div className="portfolio-item-bot">
           <div></div>
-        </div>
+        </div> */}
       </div>
     );
   }

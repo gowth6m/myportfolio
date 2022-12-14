@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FilterItem } from "./FilterItem";
 import "./Portfolio.css";
 import PortfolioItem from "./PortfolioItem";
 
@@ -17,24 +18,59 @@ const data = [
     title: "Reddit Viewer",
     description: "App developed using Flutter",
     imageUrl: "reddit_app.png",
-    link: "https://m.exeter.ac.uk",
-    github: "",
-    filters: ["web"],
+    link: "https://gowth6m.github.io/reddit-viewer/",
+    github: "https://github.com/gowth6m/reddit-viewer",
+    filters: ["web", "mobile"],
   },
   {
     key: 2,
     title: "Stugether",
     description: "App developed using Django",
-    imageUrl: "uoe_app.jpg",
-    link: "https://m.exeter.ac.uk",
-    github: "",
+    imageUrl: "stugether_app.png",
+    link: "https://stugether.herokuapp.com/",
+    github: "https://github.com/gowth6m/gravity-simulator",
     filters: ["web"],
+  },
+  {
+    key: 3,
+    title: "Zombie Maze",
+    description: "Game developed using PyGame",
+    imageUrl: "zombie_maze.gif",
+    link: "",
+    github: "https://github.com/gowth6m/zombie-maze",
+    filters: ["game"],
+  },
+  {
+    key: 4,
+    title: "Gravity Simulator",
+    description: "App developed using Vanilla JS",
+    imageUrl: "gravitySim_app.png",
+    link: "https://gowth6m.github.io/gravity-simulator/",
+    github: "https://github.com/gowth6m/stugether",
+    filters: ["web"],
+  },
+  {
+    key: 5,
+    title: "Lift Simulator",
+    description: "App developed in Java",
+    imageUrl: "liftSim.gif",
+    link: "",
+    github: "https://github.com/gowth6m/lift-system",
+    filters: ["other", "data", "desktop"],
   },
 ];
 
 export function Portfolio() {
   let items: PortfolioItem[] = [];
-  let filters: string[] = ["all", "web", "mobile", "data", "game", "other"];
+  let filters: string[] = [
+    "all",
+    "web",
+    "mobile",
+    "desktop",
+    "game",
+    "data",
+    "other",
+  ];
   const [currentFilter, setCurrentFilter] = useState("all");
 
   for (let i = 0; i < data.length; i++) {
@@ -80,41 +116,6 @@ export function Portfolio() {
             })}
         </div>
       </div>
-    </div>
-  );
-}
-
-type FilterItemProps = {
-  title: string;
-  initialClicked: boolean;
-  setCurrentFilter: React.Dispatch<React.SetStateAction<string>>;
-  currentFilter: string;
-};
-
-export function FilterItem({
-  title,
-  initialClicked,
-  setCurrentFilter,
-  currentFilter,
-}: FilterItemProps) {
-  const [isClicked, setIsClicked] = useState(initialClicked);
-
-  return (
-    <div
-      className={
-        isClicked && currentFilter === title
-          ? "filters-item filters-item-active"
-          : "filters-item"
-      }
-      onClick={() => {
-        setCurrentFilter(title);
-        if (currentFilter !== title) {
-          setIsClicked(false);
-        }
-        setIsClicked(true);
-      }}
-    >
-      {title}
     </div>
   );
 }
