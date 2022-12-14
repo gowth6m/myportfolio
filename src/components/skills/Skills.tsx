@@ -23,9 +23,9 @@ export function Skills() {
             <div className="skills-subtitle">{this.title}</div>
             <div className="skills-list">
               {this.skillList.map((skill) => (
-                <>
-                  <div className="skills-list-item">{skill}</div>
-                </>
+                <div key={skill} className="skills-list-item">
+                  {skill}
+                </div>
               ))}
             </div>
           </div>
