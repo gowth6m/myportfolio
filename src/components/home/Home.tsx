@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { About } from "../about/About";
-import {Contact } from "../contact/Contact";
+import { Contact } from "../contact/Contact";
 import { Separator } from "../misc/Separator";
 import { SideText } from "../misc/SideText";
+import { PortfolioPreview } from "../portfolio/PortfolioPreview";
 import { Skills } from "../skills/Skills";
 import { BackgroundAnimation } from "./BackgroundAnimation";
 import "./Home.css";
@@ -100,6 +101,9 @@ export function Home() {
 
       <Separator />
       <About />
+
+      <Separator />
+      <PortfolioPreview />
 
       <Separator />
       <Skills />

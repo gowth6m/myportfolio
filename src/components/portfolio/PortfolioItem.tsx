@@ -24,14 +24,19 @@ class PortfolioItem {
     this.filters = ["all", ...filters!]; // forcing it to have 'all' filter
   }
 
-  display() {
+  render() {
     return (
-      <>
-        <div className="portfolio-item-container">
-          <div>{this.title}</div>
-          <div>{this.description}</div>
-        </div>
-      </>
+      <div key={this.key} className="portfolio-item-container">
+        <img
+          className="portfolio-item-background"
+          alt="portfolioItemImg"
+          src={
+            process.env.PUBLIC_URL + "/assets/portfolio_assets/" + this.imageUrl
+          }
+        ></img>
+        <div>{this.title}</div>
+        <div>{this.description}</div>
+      </div>
     );
   }
 }

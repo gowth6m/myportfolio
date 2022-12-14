@@ -9,7 +9,7 @@ export function Portfolio() {
 
   for (let i = 0; i < 10; i++) {
     items.push(
-      new PortfolioItem(i, "item " + i, "description", "imageUrl", "link", [
+      new PortfolioItem(i, "item " + i, "description", "uoe_app.jpg", "link", [
         "game",
         "web",
       ])
@@ -40,14 +40,9 @@ export function Portfolio() {
         <div className="portfolio-items-container">
           {items
             .filter((item) => item.filters?.includes(currentFilter))
-            .map((item) => {
-              return (
-                <div key={item.key} className="portfolio-item">
-                  <div key={item.title} className="portfolio-item-image">
-                    {item.display()}
-                  </div>
-                </div>
-              );
+            .map((item, index) => {
+              return item.render();
+              // );
             })}
         </div>
       </div>
@@ -55,12 +50,12 @@ export function Portfolio() {
   );
 }
 
-interface FilterItemProps {
+type FilterItemProps = {
   title: string;
   initialClicked: boolean;
   setCurrentFilter: React.Dispatch<React.SetStateAction<string>>;
   currentFilter: string;
-}
+};
 
 export function FilterItem({
   title,
