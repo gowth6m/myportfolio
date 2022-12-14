@@ -72,8 +72,10 @@ export function PortfolioPreview() {
           })}
         </div>
 
-        <div className="portfolio-preview-view-more">
-          View More
+        <div className="portfolio-preview-view-more" onClick={
+          ()=>{handleNavigate('portfolio');}
+        }>
+          View More <i className="fa-solid fa-chevron-right"></i>
         </div>
       </div>
     </div>
