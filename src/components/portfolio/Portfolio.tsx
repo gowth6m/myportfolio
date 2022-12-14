@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Key, useState } from "react";
 import "./Portfolio.css";
 import PortfolioItem from "./PortfolioItem";
 
@@ -16,12 +16,6 @@ export function Portfolio() {
     );
   }
 
-  // const [isFilterActive, setIsFilterActive] = useState(false);
-
-  // const setFilterActive =(key:string) => {
-  //   setIsFilterActive(current => !current);
-  // };
-
   return (
     <div className="portfolio-page flex">
       <div className="portfolio-page-container screen-max">
@@ -29,24 +23,20 @@ export function Portfolio() {
           Portfolio <span>.</span>
         </div>
 
+        {/* Filters */}
         <div className="filters-container flex">
-          {filters.map((filter) => (
-            <div
-              key={filter}
-              className="filters-item"
-              onClick={() => {
-                console.log(filter);
-                
-                setCurrentFilter(filter);
-              }}
-            >
-              {filter}
-            </div>
+          {filters.map((filter, index) => (
+            <FilterItem
+              key={index}
+              title={filter}
+              initialClicked={filter === "all" ? true : false}
+              setCurrentFilter={setCurrentFilter}
+              currentFilter={currentFilter}
+            />
           ))}
         </div>
 
-        {/* rest of the stuff */}
-
+        {/* Filtered Items */}
         <div className="portfolio-items-container">
           {items
             .filter((item) => item.filters?.includes(currentFilter))
@@ -61,6 +51,41 @@ export function Portfolio() {
             })}
         </div>
       </div>
+    </div>
+  );
+}
+
+interface FilterItemProps {
+  title: string;
+  initialClicked: boolean;
+  setCurrentFilter: React.Dispatch<React.SetStateAction<string>>;
+  currentFilter: string;
+}
+
+export function FilterItem({
+  title,
+  initialClicked,
+  setCurrentFilter,
+  currentFilter,
+}: FilterItemProps) {
+  const [isClicked, setIsClicked] = useState(initialClicked);
+
+  return (
+    <div
+      className={
+        isClicked && currentFilter === title
+          ? "filters-item filters-item-active"
+          : "filters-item"
+      }
+      onClick={() => {
+        setCurrentFilter(title);
+        if (currentFilter !== title) {
+          setIsClicked(false);
+        }
+        setIsClicked(true);
+      }}
+    >
+      {title}
     </div>
   );
 }
