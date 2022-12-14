@@ -14,6 +14,15 @@ const data = [
   },
   {
     key: 1,
+    title: "Reddit Viewer",
+    description: "App developed using Flutter",
+    imageUrl: "reddit_app.png",
+    link: "https://m.exeter.ac.uk",
+    github: "",
+    filters: ["web"],
+  },
+  {
+    key: 2,
     title: "Stugether",
     description: "App developed using Django",
     imageUrl: "uoe_app.jpg",

@@ -1,9 +1,13 @@
+:root {
+    --portItemWidth: 80vw
+}
+
 .portfolio-item-container {
     background-color: transparent;
-    height: 30vh;
-    width: 90vw;
+    height: calc(var(--portItemWidth)/4*3);
+    width: var(--portItemWidth);
     display: flex;
-    margin: 10px;
+    margin: 0.8em 0;
     padding: 1em;
     flex-wrap: wrap;
     flex-direction: column;
@@ -13,7 +17,7 @@
     overflow: hidden;
 }
 
-.portfolio-item-background {
+.portfolio-item-img {
     top: 0;
     left: 0;
     width: 100%;
@@ -24,11 +28,28 @@
     object-fit: cover;
 }
 
-.portfolio-item-title {
-    z-index: 5;
-    width: 100%;
+.portfolio-item-details {
+    flex-direction: column;
     background-color: rgb(0, 0, 0);
-    margin: 0;
-    padding: 0.5em;
     border-radius: 20px;
+    z-index: 5;
+}
+
+.portfolio-item-title {
+    padding: 0.5em;
+    font-weight: 600;
+   
+}
+.portfolio-item-desc {
+    padding: 0.5em;
+}
+
+.portfolio-item-bot {
+    width: 100%;
+    height: 30%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }

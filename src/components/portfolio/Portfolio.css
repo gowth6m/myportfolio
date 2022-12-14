@@ -19,6 +19,8 @@
 .filters-container {
     flex-direction: row;
     flex-wrap: wrap;
+    width: 100%;
+    position: relative;
 }
 
 .filters-item {

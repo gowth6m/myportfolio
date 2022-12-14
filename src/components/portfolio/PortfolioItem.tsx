@@ -31,14 +31,18 @@ class PortfolioItem {
     return (
       <div key={this.key} className="portfolio-item-container">
         <img
-          className="portfolio-item-background"
+          className="portfolio-item-img"
           alt="portfolioItemImg"
           src={
             process.env.PUBLIC_URL + "/assets/portfolio_assets/" + this.imageUrl
           }
         ></img>
-        <div className="portfolio-item-title">{this.title}</div>
-        <div>{this.description}</div>
+        <div className="portfolio-item-details flex">
+          <div className="portfolio-item-title">{this.title}</div>
+        </div>
+        <div className="portfolio-item-bot">
+          <div></div>
+        </div>
       </div>
     );
   }
