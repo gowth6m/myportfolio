@@ -1,3 +1,4 @@
+import { motion, Variants } from "framer-motion";
 import "./Timeline.css";
 
 export function Timeline() {
@@ -66,7 +67,16 @@ class TimelineItem {
 
   display() {
     return (
-      <div className="about-timeline-item">
+      <motion.div
+        className="about-timeline-item"
+        transition={{
+          duration: 0.5,
+          delay: 0,
+        }}
+        initial="offscreen"
+        whileInView="onscreen"
+        variants={itemVariants}
+      >
         <div className="about-timeline-item-container">
           <div className="about-timeline-item-context">
             <div className="about-timeline-item-title">{this.title}</div>
@@ -84,7 +94,21 @@ class TimelineItem {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     );
   }
 }
+
+const itemVariants: Variants = {
+  offscreen: {
+    scale: 0,
+  },
+  onscreen: {
+    scale: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.5,
+      duration: 0.8,
+    },
+  },
+};

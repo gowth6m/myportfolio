@@ -1,3 +1,4 @@
+import { motion, Variants } from "framer-motion";
 import "./PortfolioItem.css";
 
 class PortfolioItem {
@@ -29,7 +30,17 @@ class PortfolioItem {
 
   render() {
     return (
-      <div key={this.key} className="portfolio-item-container">
+      <motion.div
+        key={this.key}
+        className="portfolio-item-container"
+        transition={{
+          duration: 0.5,
+          delay: 0,
+        }}
+        initial="offscreen"
+        whileInView="onscreen"
+        variants={this.key % 2 === 1 ? itemVariants : itemVariantsLeft}
+      >
         <img
           loading="lazy"
           className="portfolio-item-img"
@@ -44,9 +55,37 @@ class PortfolioItem {
         {/* <div className="portfolio-item-bot">
           <div></div>
         </div> */}
-      </div>
+      </motion.div>
     );
   }
 }
+
+const itemVariants: Variants = {
+  offscreen: {
+    x: "100%",
+  },
+  onscreen: {
+    x: 0,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8,
+    },
+  },
+};
+
+const itemVariantsLeft: Variants = {
+  offscreen: {
+    x: "-100%",
+  },
+  onscreen: {
+    x: 0,
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8,
+    },
+  },
+};
 
 export default PortfolioItem;

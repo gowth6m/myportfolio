@@ -78,9 +78,13 @@ export function Home() {
   return (
     <motion.div
       className="motion-div"
-      initial={{ x: window.innerWidth }}
-      animate={{ x: 0 }}
-      exit={{ x: -window.innerWidth, transition: { duration: 0.5 } }}
+      initial={{ x: window.innerWidth, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{
+        x: -window.innerWidth,
+        opacity: 1,
+        transition: { duration: 0.5 },
+      }}
     >
       <div className="home-page flex" id="home">
         <SideText left="- HELLO THERE -" right="- HELLO THERE -" />
