@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { FilterItem } from "./FilterItem";
 import "./Portfolio.css";
@@ -88,7 +89,12 @@ export function Portfolio() {
   }
 
   return (
-    <div className="portfolio-page flex">
+    <motion.div
+      className="portfolio-page flex"
+      initial={{ x: -window.innerWidth }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
+    >
       <div className="portfolio-page-container screen-max">
         <div className="portfolio-title section-title">
           Portfolio <span>.</span>
@@ -116,6 +122,6 @@ export function Portfolio() {
             })}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

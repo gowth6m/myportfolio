@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { About } from "../about/About";
 import { Contact } from "../contact/Contact";
@@ -75,7 +76,12 @@ export function Home() {
   };
 
   return (
-    <>
+    <motion.div
+      className="motion-div"
+      initial={{ x: window.innerWidth }}
+      animate={{ x: 0 }}
+      exit={{ x: -window.innerWidth, transition: { duration: 0.5 } }}
+    >
       <div className="home-page flex" id="home">
         <SideText left="- HELLO THERE -" right="- HELLO THERE -" />
         <BackgroundAnimation />
@@ -110,6 +116,6 @@ export function Home() {
 
       <Separator />
       <Contact />
-    </>
+    </motion.div>
   );
 }
