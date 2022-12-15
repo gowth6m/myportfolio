@@ -34,12 +34,12 @@ class PortfolioItem {
         key={this.key}
         className="portfolio-item-container"
         transition={{
-          duration: 0.5,
+          duration: 1,
           delay: 0,
         }}
         initial="offscreen"
         whileInView="onscreen"
-        variants={this.key % 2 === 1 ? itemVariants : itemVariantsLeft}
+        variants={this.key % 2 === 1 ? itemVariants : itemVariants}
       >
         <img
           loading="lazy"
@@ -60,30 +60,44 @@ class PortfolioItem {
   }
 }
 
+// const itemVariants: Variants = {
+//   offscreen: {
+//     x: "100%",
+//   },
+//   onscreen: {
+//     x: 0,
+//     transition: {
+//       type: "spring",
+//       bounce: 0.4,
+//       duration: 0.8,
+//     },
+//   },
+// };
+
+// const itemVariantsLeft: Variants = {
+//   offscreen: {
+//     x: "-100%",
+//   },
+//   onscreen: {
+//     x: 0,
+//     transition: {
+//       type: "spring",
+//       bounce: 0.4,
+//       duration: 0.8,
+//     },
+//   },
+// };
+
 const itemVariants: Variants = {
   offscreen: {
-    x: "100%",
+    scale: 0,
   },
   onscreen: {
-    x: 0,
+    scale: 1,
     transition: {
       type: "spring",
-      bounce: 0.4,
-      duration: 0.8,
-    },
-  },
-};
-
-const itemVariantsLeft: Variants = {
-  offscreen: {
-    x: "-100%",
-  },
-  onscreen: {
-    x: 0,
-    transition: {
-      type: "spring",
-      bounce: 0.4,
-      duration: 0.8,
+      bounce: 0.5,
+      duration: 1,
     },
   },
 };

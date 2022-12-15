@@ -6,7 +6,7 @@ export function Timeline() {
     "uoe",
     "App Developer",
     "@University of Exeter",
-    "uoe_logo.svg",
+    "uoe_white_logo.svg",
     "https://www.exeter.ac.uk/",
     "May 2022 - Present",
     [
@@ -27,7 +27,7 @@ export function Timeline() {
     "nocxa",
     "Software Developer",
     "@Nocxa",
-    "nocxa_logo_b.svg",
+    "nocxa_logo.svg",
     "https://nocxa.com/",
     "Sep 2019 - Feb 2021",
     [
@@ -110,23 +110,47 @@ class TimelineItem {
       >
         <div className="about-timeline-item-container">
           <div className="about-timeline-item-context">
-            <div className="about-timeline-item-role">{this.role}</div>
-            <div className="about-timeline-item-company">{this.company}</div>
-            <img
-              id={this.id}
-              onClick={() => this.openLink(this.link)}
-              className="about-timeline-item-logo"
-              src={process.env.PUBLIC_URL + "/assets/" + this.logo}
-              alt="work-logo"
-            />
-            <div className="timeline-item-desc">
-              {this.desc.map(e => {
-                return <li key={e}>{e}</li>
-              })}
+            <div className="timeline-row">
+              <div className="timeline-col">
+                <div className="about-timeline-item-role">{this.role}</div>
+                <div className="about-timeline-item-company">
+                  {this.company}
+                </div>
+              </div>
+
+              <div className="timeline-logo-container">
+                <img
+                  id={this.id}
+                  onClick={() => this.openLink(this.link)}
+                  className="about-timeline-item-logo"
+                  src={
+                    process.env.PUBLIC_URL +
+                    "/assets/timeline_assets/" +
+                    this.logo
+                  }
+                  alt="work-logo"
+                />
+              </div>
             </div>
+
+            {/* <div className="about-timeline-item-btn">Details</div> */}
             <div className="row about-timeline-item-bottom">
               <div className="about-timeline-item-dates">{this.date}</div>
-              {/* <div className="about-timeline-item-btn">Details</div> */}
+            </div>
+
+            <div className="timeline-header">
+              <div className="timeline-item-desc">
+                {this.desc.map((e) => {
+                  return <li key={e}>{e}</li>;
+                })}
+              </div>
+            </div>
+
+            <div className="row about-timeline-item-bottom">
+              {/* <div className="about-timeline-item-dates">{this.date}</div> */}
+              {this.stack.map((e) => {
+                return <div key={e} className="timeline-item-tags">{e}</div>;
+              })}
             </div>
           </div>
         </div>
