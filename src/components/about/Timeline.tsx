@@ -23,19 +23,6 @@ export function Timeline() {
       "AWS S3",
     ]
   );
-  let three = new TimelineItem(
-    "nocxa",
-    "Software Developer",
-    "@Nocxa",
-    "nocxa_logo.svg",
-    "https://nocxa.com/",
-    "Sep 2019 - Feb 2021",
-    [
-      "Built university wide student app in Flutter",
-      "Built chatbot used by university students",
-    ],
-    ["Flutter"]
-  );
   let two = new TimelineItem(
     "swmstudios",
     "Frontend Developer",
@@ -44,10 +31,43 @@ export function Timeline() {
     "https://swmstudios.com/",
     "Mar 2021 - Nov 2021",
     [
-      "Built university wide student app in Flutter",
-      "Built chatbot used by university students",
+      "Worked on website for Swmstudios clients",
+      "Worked on web application for Swmstudios",
     ],
-    ["Flutter"]
+    [
+      "React.js",
+      "Flutter",
+      "Firebase",
+      "GitHub",
+      "AWS Services",
+      "Typescript",
+      "Framer Motion",
+      "Tailwind",
+    ]
+  );
+  let three = new TimelineItem(
+    "nocxa",
+    "Software Developer",
+    "@Nocxa",
+    "nocxa_logo.svg",
+    "https://nocxa.com/",
+    "Sep 2019 - Feb 2021",
+    [
+      "Managed team of developers on various projects",
+      "Worked on e-commerce website for Great Comcat Engineering",
+      "Worked on e-commerce website for Di-tea bubble tea",
+      "Worked on website for Nocturnal Nomads",
+    ],
+    [
+      "Vue.js",
+      "Flutter",
+      "Django",
+      "Firebase",
+      "AWS Services",
+      "AWS S3",
+      "React.js",
+      "Framer Motion",
+    ]
   );
 
   return (
@@ -149,7 +169,11 @@ class TimelineItem {
             <div className="row about-timeline-item-bottom">
               {/* <div className="about-timeline-item-dates">{this.date}</div> */}
               {this.stack.map((e) => {
-                return <div key={e} className="timeline-item-tags">{e}</div>;
+                return (
+                  <div key={e} className="timeline-item-tags">
+                    {e}
+                  </div>
+                );
               })}
             </div>
           </div>

@@ -5,6 +5,10 @@
     --timeLineLeftMargin: 8%;
     --timelineItemHeight: 40%;
     --gapBetween: 10px;
+
+    --textItemSize: 75%;
+    --textTitleSize: 100%;
+    --textBodySize: 85%;
 }
 
 .about-timeline-container {
@@ -66,10 +70,8 @@
 }
 
 .timeline-header {
-    background-color: black;
     border-radius: var(--itemRadius);
-    padding: 5% 5%;
-    color: var(--white);
+    padding: 4% 4%;
     margin: 2px 0;
 }
 
@@ -117,24 +119,20 @@
 }
 
 .timeline-item-desc li{
-    font-size: max(60%, 14px);
-    /* list-style-type: disc; */
+    font-size: var(--textBodySize);
     list-style-position: inside;
     padding: 3px 0;
-    /* padding: 10px 0 10px 20px;
-    text-indent: -1em; */
 }
 
 .about-timeline-item-dates {
     padding: 5px 10px;
     background-color: black;
-    border-radius: 10px;
+    border-radius: var(--itemRadius);
     border: 1px solid black;
     color: var(--white);
-    /* margin-left: auto; */
-    font-size: 75%;
+    font-size: var(--textItemSize);
     cursor: pointer;
-    margin: 2px 0;
+    margin: 4px 2px;
 }
 
 .about-timeline-item-btn {
@@ -144,7 +142,7 @@
     border: 1px solid black;
     color: var(--white);
     margin-left: auto;
-    font-size: 75%;
+    font-size: var(--textItemSize);
     cursor: pointer;
 }
 
@@ -157,15 +155,18 @@
 .about-timeline-item-bottom {
     display: flex;
     flex-wrap: wrap;
-
 }
 
 .timeline-item-tags {
     background-color: black;
-    font-size: 80%;
-    padding: 5px 8px;
+    font-size: var(--textItemSize);
+    padding: 5px 10px;
     margin: 2px;
     color: var(--white);
     border-radius: var(--itemRadius);
+    border: 1px solid black;
 }
 
+@media screen and (min-width: 768px) { 
+
+}

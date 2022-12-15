@@ -39,6 +39,11 @@
         flex-direction: row;
     }
 
-    .about-page-container > * { flex: 1; }
+    /* .about-page-container > * { flex: 1; } */
+
+    .about-section-two {
+        width: 50%;
+    }
+
 }
 
