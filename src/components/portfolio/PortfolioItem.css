@@ -1,5 +1,6 @@
 :root {
-    --portItemWidth: 80vw
+    --portItemWidth: 80vw;
+    --portItemWidthSmall: 30vw;
 }
 
 .portfolio-item-container {
@@ -9,7 +10,6 @@
     display: flex;
     margin: 0.8em 0;
     padding: 1em;
-    flex-wrap: wrap;
     flex-direction: column;
     border: 2px solid var(--white);
     border-radius: var(--itemRadius);
@@ -53,4 +53,11 @@
     position: absolute;
     bottom: 0;
     left: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .portfolio-item-container {
+        height: calc(var(--portItemWidthSmall)/4*3);
+        width: var(--portItemWidthSmall);
+    }
 }

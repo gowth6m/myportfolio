@@ -21,7 +21,7 @@
     font-family: var(--title-font);
     padding: 0 5%; 
     position: absolute;
-    top: 40%;
+    top: 35%;
 }
 
 .title-gowtham {
@@ -97,8 +97,12 @@
     }
 }
 
-@media screen and (max-width: 960px) {
+
+/* ipad max width */
+@media screen and (min-width: 768px) {
     .title {
-        top: 35%;
+        top: 40%;
+        margin-left: 10%;
+        margin-right: 10%;
     }
 }

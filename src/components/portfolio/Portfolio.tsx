@@ -121,7 +121,7 @@ export function Portfolio() {
         <div className="portfolio-items-container">
           {items
             .filter((item) => item.filters?.includes(currentFilter))
-            .map((item, index) => {
+            .map((item) => {
               return item.render();
             })}
         </div>

@@ -67,7 +67,7 @@ export function PortfolioPreview() {
         </div>
 
         <div className="portfolio-items-container">
-          {items.map((item, index) => {
+          {items.map((item) => {
             return item.render();
           })}
         </div>
