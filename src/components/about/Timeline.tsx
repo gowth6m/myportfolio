@@ -70,7 +70,7 @@ class TimelineItem {
       <motion.div
         className="about-timeline-item"
         transition={{
-          duration: 0.5,
+          duration: 0.8,
           delay: 0,
         }}
         initial="offscreen"
@@ -108,7 +108,7 @@ const itemVariants: Variants = {
     transition: {
       type: "spring",
       bounce: 0.5,
-      duration: 0.8,
+      duration: 1,
     },
   },
 };

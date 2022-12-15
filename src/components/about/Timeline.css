@@ -36,6 +36,7 @@
     margin-left: 8%;
     margin-bottom: 6%;
     position: relative;
+    transform-origin: -0% 50%;
 }
 
 .about-timeline-item:nth-child(3) {
