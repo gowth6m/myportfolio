@@ -1,3 +1,4 @@
+import { motion, Variants } from "framer-motion";
 import "./Skills.css";
 
 export function Skills() {
@@ -18,18 +19,25 @@ export function Skills() {
 
     display() {
       return (
-        <>
-          <div className="skills-section">
-            <div className="skills-subtitle">{this.title}</div>
-            <div className="skills-list">
-              {this.skillList.map((skill) => (
-                <div key={skill} className="skills-list-item">
-                  {skill}
-                </div>
-              ))}
-            </div>
+        <motion.div
+          className="skills-section"
+          transition={{
+            duration: 0.5,
+            delay: 0,
+          }}
+          initial="offscreen"
+          whileInView="onscreen"
+          variants={itemVariants}
+        >
+          <div className="skills-subtitle">{this.title}</div>
+          <div className="skills-list">
+            {this.skillList.map((skill) => (
+              <div key={skill} className="skills-list-item">
+                {skill}
+              </div>
+            ))}
           </div>
-        </>
+        </motion.div>
       );
     }
   }
@@ -86,3 +94,17 @@ export function Skills() {
     </div>
   );
 }
+
+const itemVariants: Variants = {
+  offscreen: {
+    scale: 0,
+  },
+  onscreen: {
+    scale: 1,
+    transition: {
+      type: "spring",
+      bounce: 0.5,
+      duration: 0.8,
+    },
+  },
+};

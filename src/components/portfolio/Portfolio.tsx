@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FilterItem } from "./FilterItem";
 import "./Portfolio.css";
 import PortfolioItem from "./PortfolioItem";
@@ -87,6 +87,10 @@ export function Portfolio() {
       )
     );
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <motion.div

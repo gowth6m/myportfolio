@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 
@@ -87,6 +87,7 @@ function NavBar() {
                 to="/"
                 className="nav-links"
                 onClick={() => {
+                  
                   handleClick();
                   handleClickScroll("skills");
                 }}
