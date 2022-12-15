@@ -8,7 +8,7 @@
 }
 
 .about-page {
-    min-height: 100svh;
+    /* min-height: 100svh; */
     width: 100%;
 }
 
@@ -18,15 +18,20 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    width: 90%;
+    width: 95%;
 }
 
 .about-section-one {
     flex-direction: column;
+    height: 100%;
 }
 
 .about-title span {
     color: var(--white);
+}
+
+.about-body {
+    width: 90%;
 }
 
 .about-section-two {
@@ -42,7 +47,14 @@
     /* .about-page-container > * { flex: 1; } */
 
     .about-section-two {
-        width: 50%;
+        width: 100%;
+    }
+
+    .about-section-one {
+        background-color: var(--white);
+        color: black;
+        border-radius: var(--backgroundRadius);
+        width: 84%;
     }
 
 }

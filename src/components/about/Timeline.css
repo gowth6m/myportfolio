@@ -71,7 +71,7 @@
 
 .timeline-header {
     border-radius: var(--itemRadius);
-    padding: 4% 4%;
+    padding: 10px 4%;
     margin: 2px 0;
 }
 
@@ -88,7 +88,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25%;
+    max-width: 25%;
+    width: 4em;
     border-radius: var(--itemRadius);
     background-color: black;
 }
@@ -155,6 +156,7 @@
 .about-timeline-item-bottom {
     display: flex;
     flex-wrap: wrap;
+    margin: 4px 0;
 }
 
 .timeline-item-tags {
