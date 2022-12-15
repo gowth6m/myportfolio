@@ -1,6 +1,6 @@
 :root {
     --portItemWidth: 80vw;
-    --portItemWidthSmall: 30vw;
+    --portItemWidthSmall: 20vw;
 }
 
 .portfolio-item-container {
@@ -59,5 +59,8 @@
     .portfolio-item-container {
         height: calc(var(--portItemWidthSmall)/4*3);
         width: var(--portItemWidthSmall);
+        margin: 1em;
     }
+
+
 }

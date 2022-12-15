@@ -3,26 +3,40 @@ import "./Timeline.css";
 
 export function Timeline() {
   let one = new TimelineItem(
+    "uoe",
     "App Developer",
     "@University of Exeter",
     "uoe_logo.svg",
     "https://www.exeter.ac.uk/",
-    "May 2022 - Present"
+    "May 2022 - Present",
+    [
+      "Built university wide student app in Flutter",
+      "Built chatbot used by university students",
+    ]
   );
   let three = new TimelineItem(
+    "nocxa",
     "Software Developer",
     "@Nocxa",
     "nocxa_logo_b.svg",
     "https://nocxa.com/",
-    "Sep 2019 - Feb 2021"
+    "Sep 2019 - Feb 2021",
+    [
+      "Built university wide student app in Flutter",
+      "Built chatbot used by university students",
+    ]
   );
   let two = new TimelineItem(
+    "swmstudios",
     "Frontend Developer",
     "@Swimstudios",
     "swmstudios_logo.png",
     "https://swmstudios.com/",
     "Mar 2021 - Nov 2021",
-    "swmstudios"
+    [
+      "Built university wide student app in Flutter",
+      "Built chatbot used by university students",
+    ]
   );
 
   return (
@@ -38,27 +52,30 @@ export function Timeline() {
 }
 
 class TimelineItem {
-  id?: string;
-  title: string;
-  subtitle: string;
+  id: string;
+  role: string;
+  company: string;
   logo: string;
   link: string;
   date: string;
+  desc?: string[];
 
   constructor(
-    title: string,
-    subtitle: string,
+    id: string,
+    role: string,
+    company: string,
     logo: string,
     link: string,
     date: string,
-    id?: string
+    desc?: string[]
   ) {
     this.id = id;
-    this.title = title;
-    this.subtitle = subtitle;
+    this.role = role;
+    this.company = company;
     this.logo = logo;
     this.link = link;
     this.date = date;
+    this.desc = desc;
   }
 
   openLink = (openLink: string) => {
@@ -79,8 +96,8 @@ class TimelineItem {
       >
         <div className="about-timeline-item-container">
           <div className="about-timeline-item-context">
-            <div className="about-timeline-item-title">{this.title}</div>
-            <div className="about-timeline-item-subtitle">{this.subtitle}</div>
+            <div className="about-timeline-item-role">{this.role}</div>
+            <div className="about-timeline-item-company">{this.company}</div>
             <img
               id={this.id}
               onClick={() => this.openLink(this.link)}

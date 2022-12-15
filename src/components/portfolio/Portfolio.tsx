@@ -100,6 +100,8 @@ export function Portfolio() {
       exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
     >
       <div className="portfolio-page-container screen-max">
+
+        
         <div className="portfolio-title section-title">
           Portfolio <span>.</span>
         </div>
@@ -125,6 +127,8 @@ export function Portfolio() {
               return item.render();
             })}
         </div>
+
+
       </div>
     </motion.div>
   );
