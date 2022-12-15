@@ -69,23 +69,40 @@
 
 } */
 
-.about-timeline-item-title {
-    font-weight: 700;
+.about-timeline-item-role {
+    /* font-weight: 900; */
+}
+
+.about-timeline-item-company {
+    font-weight: 900;
+    cursor: pointer;
 }
 
 .about-timeline-item-logo {
     padding: 10px 0px;
     filter: grayscale();
-    width: 60%;
+    width: 50%;
     mix-blend-mode: multiply;
 }
 
+.timeline-item-desc li{
+    font-size: max(60%, 14px);
+    /* list-style-type: disc; */
+    list-style-position: inside;
+    padding: 3px 0;
+    /* padding: 10px 0 10px 20px;
+    text-indent: -1em; */
+}
+
 .about-timeline-item-dates {
-    font-size: 75%;
-    color: rgb(0, 0, 0);
     padding: 5px 10px;
-    border: 1px solid black;
+    background-color: black;
     border-radius: 10px;
+    border: 1px solid black;
+    color: var(--white);
+    margin-left: auto;
+    font-size: 75%;
+    cursor: pointer;
 }
 
 .about-timeline-item-btn {
@@ -106,7 +123,7 @@
 }
 
 #swmstudios {
-    width: 80%;
+    width: 70%;
 }
 
 

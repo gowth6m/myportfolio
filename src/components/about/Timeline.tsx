@@ -10,8 +10,17 @@ export function Timeline() {
     "https://www.exeter.ac.uk/",
     "May 2022 - Present",
     [
-      "Built university wide student app in Flutter",
-      "Built chatbot used by university students",
+      "Worked on university wide student app in Flutter",
+      "Worked on chatbot used by university students",
+      "Built games in in typescript used in student fairs",
+    ],
+    [
+      "Flutter",
+      "AWS Services",
+      "Typescript",
+      "GraphQL",
+      "AWS Cognito",
+      "AWS S3",
     ]
   );
   let three = new TimelineItem(
@@ -24,7 +33,8 @@ export function Timeline() {
     [
       "Built university wide student app in Flutter",
       "Built chatbot used by university students",
-    ]
+    ],
+    ["Flutter"]
   );
   let two = new TimelineItem(
     "swmstudios",
@@ -36,7 +46,8 @@ export function Timeline() {
     [
       "Built university wide student app in Flutter",
       "Built chatbot used by university students",
-    ]
+    ],
+    ["Flutter"]
   );
 
   return (
@@ -58,7 +69,8 @@ class TimelineItem {
   logo: string;
   link: string;
   date: string;
-  desc?: string[];
+  desc: string[];
+  stack: string[];
 
   constructor(
     id: string,
@@ -67,7 +79,8 @@ class TimelineItem {
     logo: string,
     link: string,
     date: string,
-    desc?: string[]
+    desc: string[],
+    stack: string[]
   ) {
     this.id = id;
     this.role = role;
@@ -76,6 +89,7 @@ class TimelineItem {
     this.link = link;
     this.date = date;
     this.desc = desc;
+    this.stack = stack;
   }
 
   openLink = (openLink: string) => {
@@ -105,9 +119,14 @@ class TimelineItem {
               src={process.env.PUBLIC_URL + "/assets/" + this.logo}
               alt="work-logo"
             />
+            <div className="timeline-item-desc">
+              {this.desc.map(e => {
+                return <li key={e}>{e}</li>
+              })}
+            </div>
             <div className="row about-timeline-item-bottom">
               <div className="about-timeline-item-dates">{this.date}</div>
-              <div className="about-timeline-item-btn">Details</div>
+              {/* <div className="about-timeline-item-btn">Details</div> */}
             </div>
           </div>
         </div>
