@@ -8,7 +8,7 @@ export const data = [
   {
     key: 0,
     title: "University of Exeter App",
-    description: "App developed using Flutter",
+    description: "University wide used app by all students, built in Flutter",
     imageUrl: "uoe_app.jpg",
     link: "https://m.exeter.ac.uk",
     github: "",
@@ -18,7 +18,8 @@ export const data = [
   {
     key: 1,
     title: "Reddit Viewer",
-    description: "App developed using Flutter",
+    description:
+      "A small Flutter application to search and view details about Reddit posts as such 'r/topics'",
     imageUrl: "reddit_app.png",
     link: "https://gowth6m.github.io/reddit-viewer/",
     github: "https://github.com/gowth6m/reddit-viewer",
@@ -44,7 +45,7 @@ export const data = [
     imageUrl: "zombie_maze.gif",
     link: "",
     github: "https://github.com/gowth6m/zombie-maze",
-    stack: ["Python", "PyGame"],
+    stack: ["Python", "PyGame", "2D Game"],
     filters: ["game"],
   },
   {
@@ -73,7 +74,7 @@ export const data = [
     title: "Human-Object Interaction Research",
     description: "Research on HOI. Evaluation on five HOI models",
     imageUrl: "gravitySim_app.png",
-    link: "https://gowth6m.github.io/gravity-simulator/",
+    link: "https://drive.google.com/file/d/1Al9_xuqENbQTCBpftxPDgjBnDaKR9nei/view?usp=sharing",
     github: "https://github.com/gowth6m/stugether",
     stack: ["Machine Learning", "CNN", "R-CNN", "Jupyter"],
     filters: ["data", "other"],
@@ -86,12 +87,16 @@ export const data = [
     imageUrl: "liftSim.gif",
     link: "",
     github: "https://github.com/gowth6m/game-of-life-haskell",
-    stack: ["Haskell"],
+    stack: ["Haskell", "GUI"],
     filters: ["other"],
   },
 ];
 
-export function Portfolio() {
+interface PortfolioProps {
+  standalone: boolean;
+}
+
+export function Portfolio({ standalone }: PortfolioProps) {
   let items: PortfolioItem[] = [];
   let filters: string[] = [
     "all",
@@ -131,6 +136,14 @@ export function Portfolio() {
       exit={{ x: window.innerWidth, transition: { duration: 0.5 } }}
     >
       <div className="portfolio-page-container screen-max">
+        {standalone ? (
+          <>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+          </>
+        ) : null}
         <div className="portfolio-title section-title">
           Portfolio <span>.</span>
         </div>

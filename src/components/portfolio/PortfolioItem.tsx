@@ -31,6 +31,22 @@ class PortfolioItem {
     this.filters = ["all", ...filters!]; // forcing it to have 'all' filter
   }
 
+  openSocial = (socialLink: string) => {
+    window.open(socialLink);
+  };
+
+  showImage: boolean = false;
+
+  handleMouseOver = () => {
+    this.showImage = true;
+    console.log('mouse over');
+  };
+
+  handleMouseOut = () => {
+    this.showImage = false;
+    console.log('mouse out');
+  };
+
   render() {
     return (
       <motion.div
@@ -46,10 +62,28 @@ class PortfolioItem {
         variants={this.key % 2 === 1 ? itemVariants : itemVariants}
       >
         <div className="portfolio-item-header">
-          <i className="portfolio-item-header-item fa-regular fa-3x fa-folder"></i>
+          <i
+            className="portfolio-item-header-item fa-regular fa-3x fa-folder"
+            onMouseOver={this.handleMouseOver}
+            onMouseOut={this.handleMouseOut}
+          ></i>
           <div className="portfolio-item-header-links">
-            <i className="fa-brands fa-xl fa-github"></i>
-            <i className="fa-solid fa-xl fa-arrow-up-right-from-square"></i>
+            {this.github !== "" ? (
+              <i
+                className="fa-brands fa-xl fa-github"
+                onClick={() => {
+                  this.openSocial(this.github);
+                }}
+              ></i>
+            ) : null}
+            {this.link !== "" ? (
+              <i
+                className="fa-solid fa-xl fa-arrow-up-right-from-square"
+                onClick={() => {
+                  this.openSocial(this.link);
+                }}
+              ></i>
+            ) : null}
           </div>
         </div>
 
@@ -58,10 +92,23 @@ class PortfolioItem {
           <div className="portfolio-item-body-desc">{this.description}</div>
           <div className="portfolio-item-body-tag-container">
             {this.stack?.map((e) => {
-              return <div key={e} className="portfolio-item-body-tag">{e}</div>;
+              return (
+                <div key={e} className="portfolio-item-body-tag">
+                  {e}
+                </div>
+              );
             })}
           </div>
         </div>
+
+        {/* {this.showImage ? <img
+          loading="lazy"
+          className="portfolio-item-img"
+          alt="portfolioItemImg"
+          src={
+            process.env.PUBLIC_URL + "/assets/portfolio_assets/" + this.imageUrl
+          }
+        ></img> : null} */}
 
         {/* <img
           loading="lazy"

@@ -83,4 +83,13 @@
     .portfolio-preview-view-more {
         width: calc(100% - 6em);
     }
+
+    .portfolio-page-container {
+        position: relative;
+    }
+
+    .portfolio-title {
+        margin: 1%;
+    }
+    
 }

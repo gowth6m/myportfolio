@@ -30,7 +30,7 @@ export function PortfolioPreview() {
         </div>
 
         <div className="portfolio-items-container">
-          {items.map((item) => {
+          {items.slice(0, 3).map((item, index) => {
             return item.render();
           })}
         </div>
