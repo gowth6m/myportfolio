@@ -1,45 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import PortfolioItem from "./PortfolioItem";
-import './Portfolio'
-
-const data = [
-  {
-    key: 0,
-    title: "University of Exeter App",
-    description: "App developed using Flutter",
-    imageUrl: "uoe_app.jpg",
-    link: "https://m.exeter.ac.uk",
-    github: "",
-    filters: ["web", "mobile"],
-  },
-  {
-    key: 1,
-    title: "Reddit Viewer",
-    description: "App developed using Flutter",
-    imageUrl: "reddit_app.png",
-    link: "https://gowth6m.github.io/reddit-viewer/",
-    github: "https://github.com/gowth6m/reddit-viewer",
-    filters: ["web", "mobile"],
-  },
-  {
-    key: 2,
-    title: "Stugether",
-    description: "App developed using Django",
-    imageUrl: "stugether_app.png",
-    link: "https://stugether.herokuapp.com/",
-    github: "https://github.com/gowth6m/gravity-simulator",
-    filters: ["web"],
-  },
-  {
-    key: 3,
-    title: "Zombie Maze",
-    description: "Game developed using PyGame",
-    imageUrl: "zombie_maze.gif",
-    link: "",
-    github: "https://github.com/gowth6m/zombie-maze",
-    filters: ["game"],
-  },
-];
+import "./Portfolio";
+import { data } from "./Portfolio";
 
 export function PortfolioPreview() {
   const navigate = useNavigate();
@@ -54,6 +16,7 @@ export function PortfolioPreview() {
         data[i].imageUrl,
         data[i].link,
         data[i].github,
+        data[i].stack,
         data[i].filters
       )
     );
@@ -72,9 +35,12 @@ export function PortfolioPreview() {
           })}
         </div>
 
-        <div className="portfolio-preview-view-more" onClick={
-          ()=>{handleNavigate('portfolio');}
-        }>
+        <div
+          className="portfolio-preview-view-more"
+          onClick={() => {
+            handleNavigate("portfolio");
+          }}
+        >
           View More <i className="fa-solid fa-chevron-right"></i>
         </div>
       </div>
