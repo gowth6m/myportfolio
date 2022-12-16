@@ -53,7 +53,7 @@ export function About() {
 
             <div className="about-me-pic">
               <img
-                src={process.env.PUBLIC_URL + "/assets/me1.jpg"}
+                src={process.env.PUBLIC_URL + "/assets/me.svg"}
                 alt="abountMyPic"
               />
             </div>
@@ -61,6 +61,7 @@ export function About() {
 
           {/* Section two - timeline */}
           <div className="about-section-two flex">
+            <div className="timeline-title">Experience <span>.</span></div>
             <Timeline />
           </div>
         </div>

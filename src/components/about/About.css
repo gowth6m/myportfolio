@@ -18,7 +18,7 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    width: 95%;
+    width: 100%;
 }
 
 .about-section-one {
@@ -43,11 +43,26 @@
 }
 
 .about-body {
+    margin: 10px 0;
     width: 90%;
 }
 
 .about-me-pic {
-    display: none;
+    display: initial;
+    width: 100%;
+    border-radius: 50%;
+    /* margin: 2em 0; */
+}
+
+.about-me-pic img {
+    margin-top: 10px;
+    width: 100%;
+    border-bottom-left-radius: var(--backgroundRadius);
+    border-bottom-right-radius: var(--backgroundRadius);
+}
+
+.about-section-one {
+    background-image: linear-gradient(var(--body), black);
 }
 
 .about-section-two {
@@ -88,14 +103,21 @@
     width: 100%;
 }
 
-/* .about-body-link:hover,
-.about-body-link:focus{
-    width: 100%;
-    background: black;
+.timeline-title {
+    font-weight: 900;
+    -webkit-text-stroke-width: 1.2px;
+    -webkit-text-stroke-color: var(--white);
+    color: var(--body);
+    text-transform: uppercase;
+    letter-spacing: -5px;
+    font-size: max(3.5em, 5vw);
+    margin: 12% 0;
+    font-family: var(--title-font);
+}
+
+.timeline-title span {
     color: var(--white);
-    border-radius: 10px;
-    padding: 2px 5px;
-} */
+}
 
 
 @media screen and (min-width: 768px) {
@@ -107,6 +129,10 @@
         flex-direction: row;
         width: 100%;
         height: 95%;
+    }
+
+    .about-section-one {
+        background-image: none;
     }
 
     .about-section-two {
@@ -167,6 +193,10 @@
 
     .about-title-other span {
         color: black;
+    }
+
+    .timeline-title {
+        display: none;
     }
 }
 
