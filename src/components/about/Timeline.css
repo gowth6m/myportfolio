@@ -23,6 +23,11 @@
     padding: 0;
 }
 
+.timeline-col {
+    order: 2;
+    margin-left: 1em;
+}
+
 /* The line of the timeline */
 .about-timeline:before {
     content: '';
@@ -76,7 +81,7 @@
 }
 
 .about-timeline-item-role {
-    /* font-weight: 900; */
+    font-weight: 500;
 }
 
 .about-timeline-item-company {
@@ -106,6 +111,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 2px;
 }
 
 .timeline-col {
@@ -169,6 +175,34 @@
     border: 1px solid black;
 }
 
-@media screen and (min-width: 768px) { 
+.hidden-timeline-date {
+    display: none;
+}
 
+@media screen and (min-width: 768px) { 
+    .hidden-timeline-date {
+        display: initial;
+        order: 3;
+        margin-left: auto;
+        margin-right: 2px;
+        background-color: black;
+        font-size: var(--textItemSize);
+        padding: 5px 10px;
+        color: var(--white);
+        border-radius: var(--itemRadius);
+        border: 1px solid black;
+    }
+
+    .timeline-row {
+        justify-content: flex-start;
+    }
+
+    .timeline-col {
+        order: 2;
+        margin-left: 1em;
+    }
+
+    .about-timeline-item-dates {
+        display: none;
+    }
 }

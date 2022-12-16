@@ -28,6 +28,7 @@ export function Skills() {
           initial="offscreen"
           whileInView="onscreen"
           variants={itemVariants}
+          viewport={{ once: true }}
         >
           <div className="skills-subtitle">{this.title}</div>
           <div className="skills-list">

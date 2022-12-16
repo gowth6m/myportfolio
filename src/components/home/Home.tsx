@@ -87,7 +87,7 @@ export function Home() {
       }}
     >
       <div className="home-page flex" id="home">
-        <SideText left="- HELLO THERE -" right="- HELLO THERE -" />
+        <SideText left="- hello there -" right="- scroll down -" />
         <BackgroundAnimation />
         <div className="screen-max flex">
           <div className="home-page-container">

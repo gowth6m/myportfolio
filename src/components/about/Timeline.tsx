@@ -112,8 +112,8 @@ class TimelineItem {
     this.stack = stack;
   }
 
-  openLink = (openLink: string) => {
-    window.open(openLink);
+  openSocial = (socialLink: string) => {
+    window.open(socialLink);
   };
 
   display() {
@@ -127,13 +127,19 @@ class TimelineItem {
         initial="offscreen"
         whileInView="onscreen"
         variants={itemVariants}
+        viewport={{ once: true }}
       >
         <div className="about-timeline-item-container">
           <div className="about-timeline-item-context">
             <div className="timeline-row">
               <div className="timeline-col">
                 <div className="about-timeline-item-role">{this.role}</div>
-                <div className="about-timeline-item-company">
+                <div
+                  className="about-timeline-item-company about-body-link"
+                  onClick={() => {
+                    this.openSocial(this.link);
+                  }}
+                >
                   {this.company}
                 </div>
               </div>
@@ -141,7 +147,7 @@ class TimelineItem {
               <div className="timeline-logo-container">
                 <img
                   id={this.id}
-                  onClick={() => this.openLink(this.link)}
+                  onClick={() => this.openSocial(this.link)}
                   className="about-timeline-item-logo"
                   src={
                     process.env.PUBLIC_URL +
@@ -151,9 +157,10 @@ class TimelineItem {
                   alt="work-logo"
                 />
               </div>
+
+              <div className="hidden-timeline-date">{this.date}</div>
             </div>
 
-            {/* <div className="about-timeline-item-btn">Details</div> */}
             <div className="row about-timeline-item-bottom">
               <div className="about-timeline-item-dates">{this.date}</div>
             </div>
@@ -167,7 +174,6 @@ class TimelineItem {
             </div>
 
             <div className="row about-timeline-item-bottom">
-              {/* <div className="about-timeline-item-dates">{this.date}</div> */}
               {this.stack.map((e) => {
                 return (
                   <div key={e} className="timeline-item-tags">

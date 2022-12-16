@@ -23,7 +23,7 @@
 
 .navbar-logo {
     width: 2.4em;
-    margin: 30px 40px;
+    margin: 30px 3rem;
     z-index: 20;
 }
 
@@ -75,11 +75,16 @@
     display: none;
 }
 
+.nav-change-color {
+    display: none;
+    transition: display 1s ease;
+}
+
 
 @media screen and (max-width: 960px) {
     .navbar-logo {
         width: 2.4em;
-        margin: 24px 16px;
+        margin: 20px 16px;
     }
 
     .nav-menu {
@@ -127,7 +132,7 @@
         font-size: 2.4em;
         cursor: pointer;
         color: #ffffff;
-        padding: 16px;
+        padding: 20px 16px;
         z-index: 100;
     }
 
@@ -148,6 +153,10 @@
     .nav-socials-item:focus,
     .nav-socials-item:hover {
         transform: rotate(15deg);
+    }
+
+    .nav-change-color {
+        background-color: transparent;
     }
 }
 

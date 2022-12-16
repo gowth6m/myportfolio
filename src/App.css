@@ -19,11 +19,6 @@
     color: var(--white);
 }
 
-.sec-ele-pad-v {
-    padding-top: 2em;
-    padding-bottom: 2em;
-}
-
 .row {
     display: flex;
     flex-direction: row;

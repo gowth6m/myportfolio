@@ -37,6 +37,7 @@ class PortfolioItem {
           duration: 1,
           delay: 0,
         }}
+        viewport={{ once: true }}
         initial="offscreen"
         whileInView="onscreen"
         variants={this.key % 2 === 1 ? itemVariants : itemVariants}

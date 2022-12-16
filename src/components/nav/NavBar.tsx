@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 
@@ -41,123 +41,137 @@ function NavBar() {
     window.open(socialLink);
   };
 
-  return (
-    <>
-      <nav className="navbar screen-max">
-        <div className="nav-container">
-          <NavLink
-            to="/"
-            className="nav-logo"
-            onClick={() => handleClickScroll("home")}
-          >
-            <img
-              src={process.env.PUBLIC_URL + "/assets/logo_transparent.svg"}
-              alt="logo"
-              className="navbar-logo"
-            ></img>
-          </NavLink>
+  // for scrolling tracking - hide nav bar
+  const [scrollValue, setScrollValue] = useState(0);
 
-          <ul className={click ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <NavLink
-                to="/"
-                className="nav-links"
-                onClick={() => {
-                  handleClick();
-                  handleClickScroll("home");
-                }}
-              >
-                Home
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                to="/"
-                className="nav-links"
-                onClick={() => {
-                  handleClick();
-                  handleClickScroll("about");
-                }}
-              >
-                About
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                to="/"
-                className="nav-links"
-                onClick={() => {
-                  
-                  handleClick();
-                  handleClickScroll("skills");
-                }}
-              >
-                Skills
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                to="/portfolio"
-                className="nav-links"
-                onClick={() => {
-                  handleClick();
-                  handleClickScroll("portfolio");
-                }}
-              >
-                Portfolio
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                to="/"
-                className="nav-links"
-                onClick={() => {
-                  handleClick();
-                  handleClickScroll("contact");
-                }}
-              >
-                Contact
-              </NavLink>
-            </li>
-            <div className="nav-socials">
-              <div
-                onClick={() => openSocial("https://github.com/gowth6m")}
-                className="nav-socials-item"
-              >
-                <i className="fa-brands fa-2xl fa-github"></i>
-              </div>
-              <div
-                onClick={() =>
-                  openSocial("https://www.linkedin.com/in/gowth6m/")
-                }
-                className="nav-socials-item"
-              >
-                <i className="fa-brands fa-2xl fa-linkedin"></i>
-              </div>
-              <div
-                onClick={() => openSocial("https://www.google.com")}
-                className="nav-socials-item"
-              >
-                <i className="fa-brands fa-2xl fa-youtube"></i>
-              </div>
-              <div
-                onClick={() => openSocial("https://twitter.com/gowth6m")}
-                className="nav-socials-item"
-              >
-                <i className="fa-brands fa-2xl fa-twitter"></i>
-              </div>
+  useEffect(() => {
+    const onScroll = (e: any) => {
+      setScrollValue(e.target.documentElement.scrollTop);
+    };
+
+    window.addEventListener("scroll", onScroll);
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [scrollValue]);
+
+  return (
+    <nav className="navbar screen-max">
+      <div
+        className={
+          scrollValue > window.innerHeight
+            ? "nav-container nav-change-color"
+            : "nav-container"
+        }
+      >
+        <NavLink
+          to="/"
+          className="nav-logo"
+          onClick={() => handleClickScroll("home")}
+        >
+          <img
+            src={process.env.PUBLIC_URL + "/assets/logo_transparent.svg"}
+            alt="logo"
+            className="navbar-logo"
+          ></img>
+        </NavLink>
+
+        <ul className="nav-menu">
+          <li className="nav-item">
+            <NavLink
+              to="/"
+              className="nav-links"
+              onClick={() => {
+                handleClick();
+                handleClickScroll("home");
+              }}
+            >
+              home
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              to="/"
+              className="nav-links"
+              onClick={() => {
+                handleClick();
+                handleClickScroll("about");
+              }}
+            >
+              about
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              to="/"
+              className="nav-links"
+              onClick={() => {
+                handleClick();
+                handleClickScroll("skills");
+              }}
+            >
+              skills
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              to="/portfolio"
+              className="nav-links"
+              onClick={() => {
+                handleClick();
+                handleClickScroll("portfolio");
+              }}
+            >
+              portfolio
+            </NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink
+              to="/"
+              className="nav-item"
+              onClick={() => {
+                handleClick();
+                handleClickScroll("contact");
+              }}
+            >
+              contact
+            </NavLink>
+          </li>
+          <div className="nav-socials">
+            <div
+              onClick={() => openSocial("https://github.com/gowth6m")}
+              className="nav-socials-item"
+            >
+              <i className="fa-brands fa-2xl fa-github"></i>
             </div>
-          </ul>
-          <div className="nav-icon" onClick={handleClick}>
-            <div className="menu-icon hover-target">
-              <span className="menu-icon__line menu-icon__line-left"></span>
-              <span className="menu-icon__line"></span>
-              <span className="menu-icon__line menu-icon__line-right"></span>
+            <div
+              onClick={() => openSocial("https://www.linkedin.com/in/gowth6m/")}
+              className="nav-socials-item"
+            >
+              <i className="fa-brands fa-2xl fa-linkedin"></i>
+            </div>
+            <div
+              onClick={() => openSocial("https://www.google.com")}
+              className="nav-socials-item"
+            >
+              <i className="fa-brands fa-2xl fa-youtube"></i>
+            </div>
+            <div
+              onClick={() => openSocial("https://twitter.com/gowth6m")}
+              className="nav-socials-item"
+            >
+              <i className="fa-brands fa-2xl fa-twitter"></i>
             </div>
           </div>
+        </ul>
+        <div className="nav-icon" onClick={handleClick}>
+          <div className="menu-icon hover-target">
+            <span className="menu-icon__line menu-icon__line-left"></span>
+            <span className="menu-icon__line"></span>
+            <span className="menu-icon__line menu-icon__line-right"></span>
+          </div>
         </div>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
 }
 
