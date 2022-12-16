@@ -31,7 +31,8 @@ export function About() {
             <div className="about-body">
               Hey! I'm <span>Gowtham</span> and I enjoy creating things! I have
               a passion for all things technology and design, from engineering
-              to UI/UX I love making user & browser-friendly websites and apps.
+              to UI/UX. I love making user & browser-friendly websites and apps
+              as well as creating solutions for problems.
               <br></br>
               <br></br>I am based in London, UK - currently working as an App
               Developer at the{" "}
@@ -52,7 +53,7 @@ export function About() {
 
             <div className="about-me-pic">
               <img
-                src={process.env.PUBLIC_URL + "/assets/me.jpg"}
+                src={process.env.PUBLIC_URL + "/assets/me1.jpg"}
                 alt="abountMyPic"
               />
             </div>
