@@ -156,7 +156,8 @@
     }
 
     .nav-change-color {
-        background-color: transparent;
+        display: flex;
+        transition: display 1s ease;
     }
 }
 
