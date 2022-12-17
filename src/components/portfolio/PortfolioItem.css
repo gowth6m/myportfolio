@@ -8,8 +8,6 @@
     background-color: transparent;
     height: calc(var(--portItemWidth)/4*3);
     width: var(--portItemWidth);
-    /* height: var(--portItemHeight);
-    width: calc(var(--portItemHeight)/3*4); */
     display: flex;
     margin: 0.8em 0;
     padding: 1em;
@@ -58,12 +56,16 @@
     left: 0;
 }
 
-
 .portfolio-item-header {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+}
+
+.portfolio-item-header-item {
+    cursor: pointer;
+    z-index: 5;
 }
 
 .portfolio-item-header-links {
