@@ -70,6 +70,10 @@
     flex-direction: column;
 }
 
+.portfolio-title {
+    margin: 1%;
+}
+
 @media screen and (min-width: 768px) {
     .portfolio-items-container {
         display: flex;
